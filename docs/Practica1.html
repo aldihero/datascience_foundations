@@ -8,7 +8,7 @@
 
 <meta name="author" content="Alma Herrera">
 
-<title>PRÁCTICA 1 – Análisis de algoritmos</title>
+<title>Algoritmos de búsqueda por comparación – Análisis de algoritmos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -356,6 +356,21 @@ window.Quarto = {
  <span class="menu-text">Práctica 2</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Practica3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Práctica 3</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Practica4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Práctica 4</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text">Práctica 5</span>
+  </li>
     </ul>
     </div>
 </nav>
@@ -366,81 +381,81 @@ window.Quarto = {
     <h2 id="toc-title">Contenido</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">1</span> Introducción</a></li>
-  <li><a href="#órdenes-de-crecimiento" id="toc-órdenes-de-crecimiento" class="nav-link" data-scroll-target="#órdenes-de-crecimiento"><span class="header-section-number">2</span> Órdenes de crecimiento</a>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#órdenes-de-crecimiento" id="toc-órdenes-de-crecimiento" class="nav-link" data-scroll-target="#órdenes-de-crecimiento">Órdenes de crecimiento</a>
   <ul class="collapse">
-  <li><a href="#o1-vs-ologn" id="toc-o1-vs-ologn" class="nav-link" data-scroll-target="#o1-vs-ologn"><span class="header-section-number">2.1</span> <span class="math inline">\(O(1)\)</span> vs <span class="math inline">\(O(log(n))\)</span></a></li>
-  <li><a href="#on-vs-on-log-n" id="toc-on-vs-on-log-n" class="nav-link" data-scroll-target="#on-vs-on-log-n"><span class="header-section-number">2.2</span> <span class="math inline">\(O(n)\)</span> vs <span class="math inline">\(O(n log (n))\)</span></a></li>
-  <li><a href="#on²-vs-on³" id="toc-on²-vs-on³" class="nav-link" data-scroll-target="#on²-vs-on³"><span class="header-section-number">2.3</span> <span class="math inline">\(O(n²)\)</span> vs <span class="math inline">\(O(n³)\)</span></a></li>
-  <li><a href="#oan-vs-on" id="toc-oan-vs-on" class="nav-link" data-scroll-target="#oan-vs-on"><span class="header-section-number">2.4</span> <span class="math inline">\(O(a^n)\)</span> vs <span class="math inline">\(O(n!)\)</span></a></li>
-  <li><a href="#on-vs-onn" id="toc-on-vs-onn" class="nav-link" data-scroll-target="#on-vs-onn"><span class="header-section-number">2.5</span> <span class="math inline">\(O(n!)\)</span> vs <span class="math inline">\(O(n^n)\)</span></a></li>
+  <li><a href="#o1-vs-ologn" id="toc-o1-vs-ologn" class="nav-link" data-scroll-target="#o1-vs-ologn"><span class="math inline">\(O(1)\)</span> vs <span class="math inline">\(O(log(n))\)</span></a></li>
+  <li><a href="#on-vs-on-log-n" id="toc-on-vs-on-log-n" class="nav-link" data-scroll-target="#on-vs-on-log-n"><span class="math inline">\(O(n)\)</span> vs <span class="math inline">\(O(n log (n))\)</span></a></li>
+  <li><a href="#on²-vs-on³" id="toc-on²-vs-on³" class="nav-link" data-scroll-target="#on²-vs-on³"><span class="math inline">\(O(n²)\)</span> vs <span class="math inline">\(O(n³)\)</span></a></li>
+  <li><a href="#oan-vs-on" id="toc-oan-vs-on" class="nav-link" data-scroll-target="#oan-vs-on"><span class="math inline">\(O(a^n)\)</span> vs <span class="math inline">\(O(n!)\)</span></a></li>
+  <li><a href="#on-vs-onn" id="toc-on-vs-onn" class="nav-link" data-scroll-target="#on-vs-onn"><span class="math inline">\(O(n!)\)</span> vs <span class="math inline">\(O(n^n)\)</span></a></li>
   </ul></li>
-  <li><a href="#tiempos-de-ejecucición" id="toc-tiempos-de-ejecucición" class="nav-link" data-scroll-target="#tiempos-de-ejecucición"><span class="header-section-number">3</span> Tiempos de ejecucición</a>
+  <li><a href="#tiempos-de-ejecución" id="toc-tiempos-de-ejecución" class="nav-link" data-scroll-target="#tiempos-de-ejecución">Tiempos de ejecución</a>
   <ul class="collapse">
-  <li><a href="#n-100" id="toc-n-100" class="nav-link" data-scroll-target="#n-100"><span class="header-section-number">3.1</span> n = 100</a>
+  <li><a href="#n-100" id="toc-n-100" class="nav-link" data-scroll-target="#n-100">n = 100</a>
   <ul class="collapse">
-  <li><a href="#complejidad-constante" id="toc-complejidad-constante" class="nav-link" data-scroll-target="#complejidad-constante"><span class="header-section-number">3.1.1</span> Complejidad constante</a></li>
-  <li><a href="#complejidad-logarítmica" id="toc-complejidad-logarítmica" class="nav-link" data-scroll-target="#complejidad-logarítmica"><span class="header-section-number">3.1.2</span> Complejidad Logarítmica</a></li>
-  <li><a href="#complejidad-lineal" id="toc-complejidad-lineal" class="nav-link" data-scroll-target="#complejidad-lineal"><span class="header-section-number">3.1.3</span> Complejidad Lineal</a></li>
-  <li><a href="#complejidad-de-la-forma" id="toc-complejidad-de-la-forma" class="nav-link" data-scroll-target="#complejidad-de-la-forma"><span class="header-section-number">3.1.4</span> Complejidad de la forma</a></li>
-  <li><a href="#complejidad-cuadrática" id="toc-complejidad-cuadrática" class="nav-link" data-scroll-target="#complejidad-cuadrática"><span class="header-section-number">3.1.5</span> Complejidad cuadrática</a></li>
-  <li><a href="#complejidad-cúbica" id="toc-complejidad-cúbica" class="nav-link" data-scroll-target="#complejidad-cúbica"><span class="header-section-number">3.1.6</span> Complejidad cúbica</a></li>
+  <li><a href="#complejidad-constante" id="toc-complejidad-constante" class="nav-link" data-scroll-target="#complejidad-constante">Complejidad constante</a></li>
+  <li><a href="#complejidad-logarítmica" id="toc-complejidad-logarítmica" class="nav-link" data-scroll-target="#complejidad-logarítmica">Complejidad Logarítmica</a></li>
+  <li><a href="#complejidad-lineal" id="toc-complejidad-lineal" class="nav-link" data-scroll-target="#complejidad-lineal">Complejidad Lineal</a></li>
+  <li><a href="#complejidad-de-la-forma" id="toc-complejidad-de-la-forma" class="nav-link" data-scroll-target="#complejidad-de-la-forma">Complejidad de la forma</a></li>
+  <li><a href="#complejidad-cuadrática" id="toc-complejidad-cuadrática" class="nav-link" data-scroll-target="#complejidad-cuadrática">Complejidad cuadrática</a></li>
+  <li><a href="#complejidad-cúbica" id="toc-complejidad-cúbica" class="nav-link" data-scroll-target="#complejidad-cúbica">Complejidad cúbica</a></li>
   </ul></li>
-  <li><a href="#n1000" id="toc-n1000" class="nav-link" data-scroll-target="#n1000"><span class="header-section-number">3.2</span> n=1000</a>
+  <li><a href="#n1000" id="toc-n1000" class="nav-link" data-scroll-target="#n1000">n=1000</a>
   <ul class="collapse">
-  <li><a href="#complejidad" id="toc-complejidad" class="nav-link" data-scroll-target="#complejidad"><span class="header-section-number">3.2.1</span> Complejidad</a></li>
-  <li><a href="#complejidad-logarítmica-1" id="toc-complejidad-logarítmica-1" class="nav-link" data-scroll-target="#complejidad-logarítmica-1"><span class="header-section-number">3.2.2</span> Complejidad Logarítmica</a></li>
-  <li><a href="#complejidad-lineal-1" id="toc-complejidad-lineal-1" class="nav-link" data-scroll-target="#complejidad-lineal-1"><span class="header-section-number">3.2.3</span> Complejidad Lineal</a></li>
-  <li><a href="#complejidad-de-la-forma-1" id="toc-complejidad-de-la-forma-1" class="nav-link" data-scroll-target="#complejidad-de-la-forma-1"><span class="header-section-number">3.2.4</span> Complejidad de la forma</a></li>
-  <li><a href="#complejidad-cuadrática-1" id="toc-complejidad-cuadrática-1" class="nav-link" data-scroll-target="#complejidad-cuadrática-1"><span class="header-section-number">3.2.5</span> Complejidad cuadrática</a></li>
-  <li><a href="#complejidad-cúbica-1" id="toc-complejidad-cúbica-1" class="nav-link" data-scroll-target="#complejidad-cúbica-1"><span class="header-section-number">3.2.6</span> Complejidad cúbica</a></li>
+  <li><a href="#complejidad" id="toc-complejidad" class="nav-link" data-scroll-target="#complejidad">Complejidad</a></li>
+  <li><a href="#complejidad-logarítmica-1" id="toc-complejidad-logarítmica-1" class="nav-link" data-scroll-target="#complejidad-logarítmica-1">Complejidad Logarítmica</a></li>
+  <li><a href="#complejidad-lineal-1" id="toc-complejidad-lineal-1" class="nav-link" data-scroll-target="#complejidad-lineal-1">Complejidad Lineal</a></li>
+  <li><a href="#complejidad-de-la-forma-1" id="toc-complejidad-de-la-forma-1" class="nav-link" data-scroll-target="#complejidad-de-la-forma-1">Complejidad de la forma</a></li>
+  <li><a href="#complejidad-cuadrática-1" id="toc-complejidad-cuadrática-1" class="nav-link" data-scroll-target="#complejidad-cuadrática-1">Complejidad cuadrática</a></li>
+  <li><a href="#complejidad-cúbica-1" id="toc-complejidad-cúbica-1" class="nav-link" data-scroll-target="#complejidad-cúbica-1">Complejidad cúbica</a></li>
   </ul></li>
-  <li><a href="#n10000" id="toc-n10000" class="nav-link" data-scroll-target="#n10000"><span class="header-section-number">3.3</span> n=10000</a>
+  <li><a href="#n10000" id="toc-n10000" class="nav-link" data-scroll-target="#n10000">n=10000</a>
   <ul class="collapse">
-  <li><a href="#complejidad-1" id="toc-complejidad-1" class="nav-link" data-scroll-target="#complejidad-1"><span class="header-section-number">3.3.1</span> Complejidad</a></li>
-  <li><a href="#complejidad-logarítmica-2" id="toc-complejidad-logarítmica-2" class="nav-link" data-scroll-target="#complejidad-logarítmica-2"><span class="header-section-number">3.3.2</span> Complejidad Logarítmica</a></li>
-  <li><a href="#complejidad-lineal-2" id="toc-complejidad-lineal-2" class="nav-link" data-scroll-target="#complejidad-lineal-2"><span class="header-section-number">3.3.3</span> Complejidad Lineal</a></li>
-  <li><a href="#complejidad-de-la-forma-2" id="toc-complejidad-de-la-forma-2" class="nav-link" data-scroll-target="#complejidad-de-la-forma-2"><span class="header-section-number">3.3.4</span> Complejidad de la forma</a></li>
-  <li><a href="#complejidad-cuadrática-2" id="toc-complejidad-cuadrática-2" class="nav-link" data-scroll-target="#complejidad-cuadrática-2"><span class="header-section-number">3.3.5</span> Complejidad cuadrática</a></li>
-  <li><a href="#complejidad-cúbica-2" id="toc-complejidad-cúbica-2" class="nav-link" data-scroll-target="#complejidad-cúbica-2"><span class="header-section-number">3.3.6</span> Complejidad cúbica</a></li>
+  <li><a href="#complejidad-1" id="toc-complejidad-1" class="nav-link" data-scroll-target="#complejidad-1">Complejidad</a></li>
+  <li><a href="#complejidad-logarítmica-2" id="toc-complejidad-logarítmica-2" class="nav-link" data-scroll-target="#complejidad-logarítmica-2">Complejidad Logarítmica</a></li>
+  <li><a href="#complejidad-lineal-2" id="toc-complejidad-lineal-2" class="nav-link" data-scroll-target="#complejidad-lineal-2">Complejidad Lineal</a></li>
+  <li><a href="#complejidad-de-la-forma-2" id="toc-complejidad-de-la-forma-2" class="nav-link" data-scroll-target="#complejidad-de-la-forma-2">Complejidad de la forma</a></li>
+  <li><a href="#complejidad-cuadrática-2" id="toc-complejidad-cuadrática-2" class="nav-link" data-scroll-target="#complejidad-cuadrática-2">Complejidad cuadrática</a></li>
+  <li><a href="#complejidad-cúbica-2" id="toc-complejidad-cúbica-2" class="nav-link" data-scroll-target="#complejidad-cúbica-2">Complejidad cúbica</a></li>
   </ul></li>
-  <li><a href="#n100000" id="toc-n100000" class="nav-link" data-scroll-target="#n100000"><span class="header-section-number">3.4</span> n=100000</a>
+  <li><a href="#n100000" id="toc-n100000" class="nav-link" data-scroll-target="#n100000">n=100000</a>
   <ul class="collapse">
-  <li><a href="#complejidad-2" id="toc-complejidad-2" class="nav-link" data-scroll-target="#complejidad-2"><span class="header-section-number">3.4.1</span> Complejidad</a></li>
-  <li><a href="#complejidad-logarítmica-3" id="toc-complejidad-logarítmica-3" class="nav-link" data-scroll-target="#complejidad-logarítmica-3"><span class="header-section-number">3.4.2</span> Complejidad logarítmica</a></li>
-  <li><a href="#complejidad-lineal-3" id="toc-complejidad-lineal-3" class="nav-link" data-scroll-target="#complejidad-lineal-3"><span class="header-section-number">3.4.3</span> Complejidad Lineal</a></li>
-  <li><a href="#complejidad-de-la-forma-3" id="toc-complejidad-de-la-forma-3" class="nav-link" data-scroll-target="#complejidad-de-la-forma-3"><span class="header-section-number">3.4.4</span> Complejidad de la forma</a></li>
-  <li><a href="#complejidad-cuadrática-3" id="toc-complejidad-cuadrática-3" class="nav-link" data-scroll-target="#complejidad-cuadrática-3"><span class="header-section-number">3.4.5</span> Complejidad cuadrática</a></li>
-  <li><a href="#complejidad-cúbica-3" id="toc-complejidad-cúbica-3" class="nav-link" data-scroll-target="#complejidad-cúbica-3"><span class="header-section-number">3.4.6</span> Complejidad cúbica</a></li>
+  <li><a href="#complejidad-2" id="toc-complejidad-2" class="nav-link" data-scroll-target="#complejidad-2">Complejidad</a></li>
+  <li><a href="#complejidad-logarítmica-3" id="toc-complejidad-logarítmica-3" class="nav-link" data-scroll-target="#complejidad-logarítmica-3">Complejidad logarítmica</a></li>
+  <li><a href="#complejidad-lineal-3" id="toc-complejidad-lineal-3" class="nav-link" data-scroll-target="#complejidad-lineal-3">Complejidad Lineal</a></li>
+  <li><a href="#complejidad-de-la-forma-3" id="toc-complejidad-de-la-forma-3" class="nav-link" data-scroll-target="#complejidad-de-la-forma-3">Complejidad de la forma</a></li>
+  <li><a href="#complejidad-cuadrática-3" id="toc-complejidad-cuadrática-3" class="nav-link" data-scroll-target="#complejidad-cuadrática-3">Complejidad cuadrática</a></li>
+  <li><a href="#complejidad-cúbica-3" id="toc-complejidad-cúbica-3" class="nav-link" data-scroll-target="#complejidad-cúbica-3">Complejidad cúbica</a></li>
   </ul></li>
-  <li><a href="#n1000000" id="toc-n1000000" class="nav-link" data-scroll-target="#n1000000"><span class="header-section-number">3.5</span> n=1000000</a>
+  <li><a href="#n1000000" id="toc-n1000000" class="nav-link" data-scroll-target="#n1000000">n=1000000</a>
   <ul class="collapse">
-  <li><a href="#complejidad-3" id="toc-complejidad-3" class="nav-link" data-scroll-target="#complejidad-3"><span class="header-section-number">3.5.1</span> Complejidad</a></li>
-  <li><a href="#complejidad-logarítmica-4" id="toc-complejidad-logarítmica-4" class="nav-link" data-scroll-target="#complejidad-logarítmica-4"><span class="header-section-number">3.5.2</span> Complejidad logarítmica</a></li>
-  <li><a href="#complejidad-lineal-4" id="toc-complejidad-lineal-4" class="nav-link" data-scroll-target="#complejidad-lineal-4"><span class="header-section-number">3.5.3</span> Complejidad Lineal</a></li>
-  <li><a href="#complejidad-de-la-forma-4" id="toc-complejidad-de-la-forma-4" class="nav-link" data-scroll-target="#complejidad-de-la-forma-4"><span class="header-section-number">3.5.4</span> Complejidad de la forma</a></li>
-  <li><a href="#complejidad-cuadrática-4" id="toc-complejidad-cuadrática-4" class="nav-link" data-scroll-target="#complejidad-cuadrática-4"><span class="header-section-number">3.5.5</span> Complejidad cuadrática</a></li>
+  <li><a href="#complejidad-3" id="toc-complejidad-3" class="nav-link" data-scroll-target="#complejidad-3">Complejidad</a></li>
+  <li><a href="#complejidad-logarítmica-4" id="toc-complejidad-logarítmica-4" class="nav-link" data-scroll-target="#complejidad-logarítmica-4">Complejidad logarítmica</a></li>
+  <li><a href="#complejidad-lineal-4" id="toc-complejidad-lineal-4" class="nav-link" data-scroll-target="#complejidad-lineal-4">Complejidad Lineal</a></li>
+  <li><a href="#complejidad-de-la-forma-4" id="toc-complejidad-de-la-forma-4" class="nav-link" data-scroll-target="#complejidad-de-la-forma-4">Complejidad de la forma</a></li>
+  <li><a href="#complejidad-cuadrática-4" id="toc-complejidad-cuadrática-4" class="nav-link" data-scroll-target="#complejidad-cuadrática-4">Complejidad cuadrática</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#resultados" id="toc-resultados" class="nav-link" data-scroll-target="#resultados"><span class="header-section-number">4</span> Resultados</a>
+  <li><a href="#resultados" id="toc-resultados" class="nav-link" data-scroll-target="#resultados">Resultados</a>
   <ul class="collapse">
-  <li><a href="#tiempos-experimentales" id="toc-tiempos-experimentales" class="nav-link" data-scroll-target="#tiempos-experimentales"><span class="header-section-number">4.1</span> Tiempos experimentales</a></li>
-  <li><a href="#tiempos-teóricos" id="toc-tiempos-teóricos" class="nav-link" data-scroll-target="#tiempos-teóricos"><span class="header-section-number">4.2</span> Tiempos teóricos</a></li>
+  <li><a href="#tiempos-experimentales" id="toc-tiempos-experimentales" class="nav-link" data-scroll-target="#tiempos-experimentales">Tiempos experimentales</a></li>
+  <li><a href="#tiempos-teóricos" id="toc-tiempos-teóricos" class="nav-link" data-scroll-target="#tiempos-teóricos">Tiempos teóricos</a></li>
   </ul></li>
-  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones"><span class="header-section-number">5</span> Conclusiones</a></li>
-  <li><a href="#algoritmos-implementados" id="toc-algoritmos-implementados" class="nav-link" data-scroll-target="#algoritmos-implementados"><span class="header-section-number">6</span> Algoritmos implementados</a>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a></li>
+  <li><a href="#algoritmos-implementados" id="toc-algoritmos-implementados" class="nav-link" data-scroll-target="#algoritmos-implementados">Algoritmos implementados</a>
   <ul class="collapse">
-  <li><a href="#acceder-a-un-arreglo" id="toc-acceder-a-un-arreglo" class="nav-link" data-scroll-target="#acceder-a-un-arreglo"><span class="header-section-number">6.1</span> Acceder a un arreglo</a></li>
-  <li><a href="#cálculo-de-los-números-de-fibonacci" id="toc-cálculo-de-los-números-de-fibonacci" class="nav-link" data-scroll-target="#cálculo-de-los-números-de-fibonacci"><span class="header-section-number">6.2</span> Cálculo de los números de fibonacci</a></li>
-  <li><a href="#bubble-sort" id="toc-bubble-sort" class="nav-link" data-scroll-target="#bubble-sort"><span class="header-section-number">6.3</span> Bubble Sort</a></li>
-  <li><a href="#merge-sort" id="toc-merge-sort" class="nav-link" data-scroll-target="#merge-sort"><span class="header-section-number">6.4</span> Merge Sort</a></li>
-  <li><a href="#insertion-sort" id="toc-insertion-sort" class="nav-link" data-scroll-target="#insertion-sort"><span class="header-section-number">6.5</span> Insertion Sort</a></li>
-  <li><a href="#multiplicación-de-matrices" id="toc-multiplicación-de-matrices" class="nav-link" data-scroll-target="#multiplicación-de-matrices"><span class="header-section-number">6.6</span> Multiplicación de matrices</a></li>
-  <li><a href="#cálculo-de-los-números-de-fibonacci-recursivo" id="toc-cálculo-de-los-números-de-fibonacci-recursivo" class="nav-link" data-scroll-target="#cálculo-de-los-números-de-fibonacci-recursivo"><span class="header-section-number">6.7</span> Cálculo de los números de fibonacci (Recursivo)</a></li>
-  <li><a href="#travelling-salesman-problem" id="toc-travelling-salesman-problem" class="nav-link" data-scroll-target="#travelling-salesman-problem"><span class="header-section-number">6.8</span> Travelling Salesman Problem</a></li>
-  <li><a href="#caminos-completos-en-un-grafo" id="toc-caminos-completos-en-un-grafo" class="nav-link" data-scroll-target="#caminos-completos-en-un-grafo"><span class="header-section-number">6.9</span> Caminos completos en un grafo</a></li>
+  <li><a href="#acceder-a-un-arreglo" id="toc-acceder-a-un-arreglo" class="nav-link" data-scroll-target="#acceder-a-un-arreglo">Acceder a un arreglo</a></li>
+  <li><a href="#cálculo-de-los-números-de-fibonacci" id="toc-cálculo-de-los-números-de-fibonacci" class="nav-link" data-scroll-target="#cálculo-de-los-números-de-fibonacci">Cálculo de los números de fibonacci</a></li>
+  <li><a href="#bubble-sort" id="toc-bubble-sort" class="nav-link" data-scroll-target="#bubble-sort">Bubble Sort</a></li>
+  <li><a href="#merge-sort" id="toc-merge-sort" class="nav-link" data-scroll-target="#merge-sort">Merge Sort</a></li>
+  <li><a href="#insertion-sort" id="toc-insertion-sort" class="nav-link" data-scroll-target="#insertion-sort">Insertion Sort</a></li>
+  <li><a href="#multiplicación-de-matrices" id="toc-multiplicación-de-matrices" class="nav-link" data-scroll-target="#multiplicación-de-matrices">Multiplicación de matrices</a></li>
+  <li><a href="#cálculo-de-los-números-de-fibonacci-recursivo" id="toc-cálculo-de-los-números-de-fibonacci-recursivo" class="nav-link" data-scroll-target="#cálculo-de-los-números-de-fibonacci-recursivo">Cálculo de los números de fibonacci (Recursivo)</a></li>
+  <li><a href="#travelling-salesman-problem" id="toc-travelling-salesman-problem" class="nav-link" data-scroll-target="#travelling-salesman-problem">Travelling Salesman Problem</a></li>
+  <li><a href="#caminos-completos-en-un-grafo" id="toc-caminos-completos-en-un-grafo" class="nav-link" data-scroll-target="#caminos-completos-en-un-grafo">Caminos completos en un grafo</a></li>
   </ul></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">7</span> Referencias</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -450,7 +465,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">PRÁCTICA 1</h1>
+<h1 class="title">Algoritmos de búsqueda por comparación</h1>
 </div>
 
 
@@ -478,8 +493,8 @@ window.Quarto = {
 <li>Se mejora la sección de conclusiones</li>
 <li>La sección de referencias se citan de acuerdo al formato IEEE</li>
 </ul>
-<section id="introducción" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introducción</h1>
+<section id="introducción" class="level1">
+<h1>Introducción</h1>
 <p>En este reporte se analizan los diferentes órdenes de crecimiento, siendo desde <span class="math inline">\(O(1)\)</span> hasta <span class="math inline">\(O(n^n)\)</span>, para ello se presentan primero las gráficas correspondientes para visualizar como es el comportamiento de cada una y observar qué tan rápido crecen.</p>
 <p>Una vez que se han observado los comportamientos se procederá a comprobar los órdenes de crecimiento mediante algoritmos de prueba, dichos algoritmos se escogieron de acuerdo a las complejidades mencionadas en la primera parte, y son algoritmos clásicos que van de algoritmos de ordenamiento, cálculo del número de Fibonacci hasta una implementación por fuerza bruta del problema del viajero (Travelling Salesman Problem). Para realizar las mediciones de rendimiento se hacen a partir de las herramientas que ofrece el paquete BenchmarkTools, siendo el parámetro de rendimiento n, que tomará valores de 100, 1000, 10000,100000 y un valor muy grande de n=1000000. Todas las implementaciones se realizan en Julia.</p>
 <p>En las pruebas de medición de tiempo se irá observando que no es posible hacer algunas mediciones para algunos órdenes de crecimiento debido a su naturaleza por lo que para esos casos se hará una estimación teórica suponiendo que cada operación tiene un costo de 1ns.</p>
@@ -492,10 +507,10 @@ window.Quarto = {
 <li>Referencias</li>
 </ol>
 </section>
-<section id="órdenes-de-crecimiento" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Órdenes de crecimiento</h1>
-<section id="o1-vs-ologn" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="o1-vs-ologn"><span class="header-section-number">2.1</span> <span class="math inline">\(O(1)\)</span> vs <span class="math inline">\(O(log(n))\)</span></h2>
+<section id="órdenes-de-crecimiento" class="level1">
+<h1>Órdenes de crecimiento</h1>
+<section id="o1-vs-ologn" class="level2">
+<h2 class="anchored" data-anchor-id="o1-vs-ologn"><span class="math inline">\(O(1)\)</span> vs <span class="math inline">\(O(log(n))\)</span></h2>
 <div id="95d78f36-e112-4312-b810-91ef8619514a" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span>, <span class="bu">LaTeXStrings</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -562,8 +577,8 @@ window.Quarto = {
 </div>
 <p>Se observa que la función de crecimiento para <span class="math inline">\(O(log(n))\)</span> es muy pequeña es decir, incluso después de 500 puntos sus valores en <span class="math inline">\(y\)</span> no superan a 7, por lo que funciones de crecimiento de este tipo son ideales para un algoritmo, por supuesto el <span class="math inline">\(O(1)\)</span> es constante y hallar algoritmos que tengan ese comportamiento solo es posible si es amortizado.</p>
 </section>
-<section id="on-vs-on-log-n" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="on-vs-on-log-n"><span class="header-section-number">2.2</span> <span class="math inline">\(O(n)\)</span> vs <span class="math inline">\(O(n log (n))\)</span></h2>
+<section id="on-vs-on-log-n" class="level2">
+<h2 class="anchored" data-anchor-id="on-vs-on-log-n"><span class="math inline">\(O(n)\)</span> vs <span class="math inline">\(O(n log (n))\)</span></h2>
 <div id="bd2a8635-e65e-4ea2-b347-09dbc8a1d9d3" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span><span class="fl">50</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fl">1</span><span class="op">:</span>n, [x for x <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>n], label<span class="op">=</span>L<span class="st">"n"</span>)</span>
@@ -623,8 +638,8 @@ window.Quarto = {
 </div>
 <p>En el caso del orden de crecimiento <span class="math inline">\(O(nlog(n))\)</span> se ve que tiene un crecimiento rápido, ya que al observar el crecimiento lineal de <span class="math inline">\(O(n)\)</span>, lo supera dentro de los 10 primeros puntos.</p>
 </section>
-<section id="on²-vs-on³" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="on²-vs-on³"><span class="header-section-number">2.3</span> <span class="math inline">\(O(n²)\)</span> vs <span class="math inline">\(O(n³)\)</span></h2>
+<section id="on²-vs-on³" class="level2">
+<h2 class="anchored" data-anchor-id="on²-vs-on³"><span class="math inline">\(O(n²)\)</span> vs <span class="math inline">\(O(n³)\)</span></h2>
 <div id="548609b7-931c-43f4-b51a-82b3f824e972" class="cell" data-execution_count="82">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span><span class="fl">50</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fl">1</span><span class="op">:</span>n, [x<span class="op">*</span>x for x <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>n ], label<span class="op">=</span>L<span class="st">"x^2"</span>)</span>
@@ -688,8 +703,8 @@ window.Quarto = {
 </div>
 <p>Dada la naturaleza de las funciones que son polinomiales se observa que la función que llega al orden de <span class="math inline">\(10^5\)</span> es <span class="math inline">\(x^3\)</span> en los primeros 50 puntos, mientras que <span class="math inline">\(x^2\)</span> llega apenas a 2500.</p>
 </section>
-<section id="oan-vs-on" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="oan-vs-on"><span class="header-section-number">2.4</span> <span class="math inline">\(O(a^n)\)</span> vs <span class="math inline">\(O(n!)\)</span></h2>
+<section id="oan-vs-on" class="level2">
+<h2 class="anchored" data-anchor-id="oan-vs-on"><span class="math inline">\(O(a^n)\)</span> vs <span class="math inline">\(O(n!)\)</span></h2>
 <div id="2ae4df41-bdda-45ae-b520-52cce57a148e" class="cell" data-execution_count="89">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span><span class="fl">15</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fl">1</span><span class="op">:</span>n, [<span class="fl">2</span><span class="op">^</span>x for x <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>n ], label<span class="op">=</span>L<span class="st">"2^n"</span>)</span>
@@ -755,8 +770,8 @@ window.Quarto = {
 <p>Para este caso se detecta un comportamiento relevante, ya que la función de crecimiento <span class="math inline">\(O(a^n)\)</span> al depender del valor de <span class="math inline">\(a\)</span> puede tener un crecimiento menor o uno mucho mayor, como en la gráfica que para un valor de <span class="math inline">\(a=2\)</span> en 15 puntos llega al orden de <span class="math inline">\(3x10^4\)</span> mientras que cuando <span class="math inline">\(a=7\)</span> supera por mucho incluso al orden de crecimiento de <span class="math inline">\(O(n!)\)</span> llegando ambas a tener un orden <span class="math inline">\(10^{12}\)</span>.</p>
 <p>Sin embargo aunque <span class="math inline">\(O(a^n)\)</span> sea un poco menor para ciertos valores de <span class="math inline">\(a\)</span> tiene un crecimiento muy rápido y lo es mucho mas para <span class="math inline">\(O(n!)\)</span>, siendo estos órdenes de crecimiento no aptos para algoritmos.</p>
 </section>
-<section id="on-vs-onn" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="on-vs-onn"><span class="header-section-number">2.5</span> <span class="math inline">\(O(n!)\)</span> vs <span class="math inline">\(O(n^n)\)</span></h2>
+<section id="on-vs-onn" class="level2">
+<h2 class="anchored" data-anchor-id="on-vs-onn"><span class="math inline">\(O(n!)\)</span> vs <span class="math inline">\(O(n^n)\)</span></h2>
 <div id="def8241f-7977-4f7e-828d-ae71bd97ddeb" class="cell" data-execution_count="90">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span><span class="fl">15</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fl">1</span><span class="op">:</span>n, [<span class="fu">factorial</span>(x) for x <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>n], label<span class="op">=</span>L<span class="st">"n!"</span>)</span>
@@ -821,8 +836,8 @@ window.Quarto = {
 <p>Siendo las primeras 4 las que se deben considerar para la realización de los algoritmos que requieran iteraciones sobre gran cantidad de datos</p>
 </section>
 </section>
-<section id="tiempos-de-ejecucición" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Tiempos de ejecucición</h1>
+<section id="tiempos-de-ejecución" class="level1">
+<h1>Tiempos de ejecución</h1>
 <p>Para hacer las mediciones de rendimiento se estará usando BenchmarkTools, en la que de acuerdo a la documentación <a href="#Referencias">¹</a> se hará uso de la función tune!() para obtener mejores mediciones de rendimiento, ya que con benchmark se ejecuta varias veces el código para obtener estadísticas de tiempos con lo que para no estar calculando cuántas deben ser las ejecuciones apropiadas para cada algoritmo, tune! lo hace por nosotros.</p>
 <p>Dicho lo anterior se estarán mostrando los resultados de tiempos en este orden n=100,1000,10000, 100000 y 1000000 para cada algoritmo, sin embargo a partir de los algoritmos de crecimiento <span class="math inline">\(O(a^n)\)</span> no se estarán tomando mediciones ya que dichos algoritmos toman demasiado tiempo en ejecutarse incluso para una <span class="math inline">\(n=15\)</span> por lo que se omiten en esta sección y se retoman en la sección de Resultados.</p>
 <p>En la medición de tiempos de ejecución de este reporte se decidió generar números random del 1 al 100, de forma que todas las entradas que requería algún arreglo o matriz se generaron con ese rango de números, esto con la finalidad de no saturar la memoria con los números almacenados y así dar margen para probar con tamaños de <span class="math inline">\(n\)</span> grandes.</p>
@@ -830,8 +845,8 @@ window.Quarto = {
 <div id="633fc3e0-833c-4940-a7e0-2c8ddef5125c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">BenchmarkTools</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="n-100" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="n-100"><span class="header-section-number">3.1</span> n = 100</h2>
+<section id="n-100" class="level2">
+<h2 class="anchored" data-anchor-id="n-100">n = 100</h2>
 <p>Se estarán tomando mediciones para una <span class="math inline">\(n=100\)</span></p>
 <div id="ff2e04b9-53f6-4137-bb4d-e18d8451e36c" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span><span class="fl">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -839,8 +854,8 @@ window.Quarto = {
 <pre><code>100</code></pre>
 </div>
 </div>
-<section id="complejidad-constante" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="complejidad-constante"><span class="header-section-number">3.1.1</span> Complejidad constante</h3>
+<section id="complejidad-constante" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-constante">Complejidad constante</h3>
 <p><span class="math inline">\(O(1)\)</span></p>
 <div id="cb04c9f8-3a99-4f3c-8266-9b2cbffb0916" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(1)</span></span>
@@ -861,8 +876,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-logarítmica" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="complejidad-logarítmica"><span class="header-section-number">3.1.2</span> Complejidad Logarítmica</h3>
+<section id="complejidad-logarítmica" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-logarítmica">Complejidad Logarítmica</h3>
 <p><span class="math inline">\(O(log(n))\)</span></p>
 <div id="29afbf2a-5d14-4e9c-9b3e-3a16d21b6a46" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>b_a1<span class="op">=</span> <span class="pp">@benchmarkable</span> <span class="fu">nth_fibonacci</span>(<span class="op">$</span>n)</span>
@@ -882,8 +897,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-lineal" class="level3" data-number="3.1.3">
-<h3 data-number="3.1.3" class="anchored" data-anchor-id="complejidad-lineal"><span class="header-section-number">3.1.3</span> Complejidad Lineal</h3>
+<section id="complejidad-lineal" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-lineal">Complejidad Lineal</h3>
 <p><span class="math inline">\(O(n)\)</span></p>
 <div id="55321383-b8c1-4373-8b00-c361dc057e14" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(n)</span></span>
@@ -904,8 +919,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-de-la-forma" class="level3" data-number="3.1.4">
-<h3 data-number="3.1.4" class="anchored" data-anchor-id="complejidad-de-la-forma"><span class="header-section-number">3.1.4</span> Complejidad de la forma</h3>
+<section id="complejidad-de-la-forma" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-de-la-forma">Complejidad de la forma</h3>
 <p><span class="math inline">\(O(nlog(n))\)</span></p>
 <div id="0386c3f5-8004-4175-b12c-3e786ddfdcf8" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(nlog(n))</span></span>
@@ -926,8 +941,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-cuadrática" class="level3" data-number="3.1.5">
-<h3 data-number="3.1.5" class="anchored" data-anchor-id="complejidad-cuadrática"><span class="header-section-number">3.1.5</span> Complejidad cuadrática</h3>
+<section id="complejidad-cuadrática" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-cuadrática">Complejidad cuadrática</h3>
 <p><span class="math inline">\(O(n^2)\)</span></p>
 <div id="94702ac0-db12-4e93-8271-5b253ee990b5" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(n^2)</span></span>
@@ -948,8 +963,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-cúbica" class="level3" data-number="3.1.6">
-<h3 data-number="3.1.6" class="anchored" data-anchor-id="complejidad-cúbica"><span class="header-section-number">3.1.6</span> Complejidad cúbica</h3>
+<section id="complejidad-cúbica" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-cúbica">Complejidad cúbica</h3>
 <p><span class="math inline">\(O(n^3)\)</span></p>
 <div id="a3b38b03-0408-422e-9000-c492b4244673" class="cell" data-scrolled="true" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(n^3)</span></span>
@@ -971,8 +986,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="n1000" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="n1000"><span class="header-section-number">3.2</span> n=1000</h2>
+<section id="n1000" class="level2">
+<h2 class="anchored" data-anchor-id="n1000">n=1000</h2>
 <p>Se realizan mediciones para una <span class="math inline">\(n=1000\)</span></p>
 <div id="23fce2ed-fd8e-4e07-a3c5-c2212447fc29" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span><span class="fl">1000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -980,8 +995,8 @@ window.Quarto = {
 <pre><code>1000</code></pre>
 </div>
 </div>
-<section id="complejidad" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="complejidad"><span class="header-section-number">3.2.1</span> Complejidad</h3>
+<section id="complejidad" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad">Complejidad</h3>
 <p><span class="math inline">\(O(1)\)</span></p>
 <div id="4638f629-f115-48e3-8094-d5c26c9b308d" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="pp">@benchmarkable</span> <span class="fu">arreglo</span>(A, <span class="op">$</span>n) setup<span class="op">=</span>(A<span class="op">=</span><span class="fu">rand</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">100</span>, <span class="op">$</span>n))</span>
@@ -1001,8 +1016,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-logarítmica-1" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="complejidad-logarítmica-1"><span class="header-section-number">3.2.2</span> Complejidad Logarítmica</h3>
+<section id="complejidad-logarítmica-1" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-logarítmica-1">Complejidad Logarítmica</h3>
 <p><span class="math inline">\(O(log(n))\)</span></p>
 <div id="722b2521-cbf4-4a69-8dde-56c0e1ab04d8" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>b_b1<span class="op">=</span> <span class="pp">@benchmarkable</span> <span class="fu">nth_fibonacci</span>(<span class="op">$</span>n)</span>
@@ -1022,8 +1037,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-lineal-1" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="complejidad-lineal-1"><span class="header-section-number">3.2.3</span> Complejidad Lineal</h3>
+<section id="complejidad-lineal-1" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-lineal-1">Complejidad Lineal</h3>
 <p><span class="math inline">\(O(n)\)</span></p>
 <div id="c3a770cd-e06c-4925-8a6e-011d6e7cafc0" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(n)</span></span>
@@ -1044,8 +1059,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-de-la-forma-1" class="level3" data-number="3.2.4">
-<h3 data-number="3.2.4" class="anchored" data-anchor-id="complejidad-de-la-forma-1"><span class="header-section-number">3.2.4</span> Complejidad de la forma</h3>
+<section id="complejidad-de-la-forma-1" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-de-la-forma-1">Complejidad de la forma</h3>
 <p><span class="math inline">\(O(nlog(n))\)</span></p>
 <div id="dcb6d8f4-a56e-4e7d-9002-db6c05358ced" class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(nlog(n))</span></span>
@@ -1066,8 +1081,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-cuadrática-1" class="level3" data-number="3.2.5">
-<h3 data-number="3.2.5" class="anchored" data-anchor-id="complejidad-cuadrática-1"><span class="header-section-number">3.2.5</span> Complejidad cuadrática</h3>
+<section id="complejidad-cuadrática-1" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-cuadrática-1">Complejidad cuadrática</h3>
 <p><span class="math inline">\(O(n^2)\)</span></p>
 <div id="34257860-bdc5-4791-822e-44f0d10bcb31" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(n^2)</span></span>
@@ -1088,8 +1103,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-cúbica-1" class="level3" data-number="3.2.6">
-<h3 data-number="3.2.6" class="anchored" data-anchor-id="complejidad-cúbica-1"><span class="header-section-number">3.2.6</span> Complejidad cúbica</h3>
+<section id="complejidad-cúbica-1" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-cúbica-1">Complejidad cúbica</h3>
 <p><span class="math inline">\(O(n^3)\)</span></p>
 <div id="5e823137-f44b-4b4a-8c13-e5952ec26938" class="cell" data-scrolled="true" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(n^3)</span></span>
@@ -1111,8 +1126,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="n10000" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="n10000"><span class="header-section-number">3.3</span> n=10000</h2>
+<section id="n10000" class="level2">
+<h2 class="anchored" data-anchor-id="n10000">n=10000</h2>
 <p>Se realizan mediciones para una n=10000</p>
 <div id="9e02d194-6ab9-44c6-bf6a-c9b3ab45ae3a" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span><span class="fl">10000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1120,8 +1135,8 @@ window.Quarto = {
 <pre><code>10000</code></pre>
 </div>
 </div>
-<section id="complejidad-1" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="complejidad-1"><span class="header-section-number">3.3.1</span> Complejidad</h3>
+<section id="complejidad-1" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-1">Complejidad</h3>
 <p><span class="math inline">\(O(1)\)</span></p>
 <div id="7e8822bc-70ab-4d0b-92b2-c163df48cd65" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="pp">@benchmarkable</span> <span class="fu">arreglo</span>(A, <span class="op">$</span>n) setup<span class="op">=</span>(A<span class="op">=</span><span class="fu">rand</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">100</span>, <span class="op">$</span>n))</span>
@@ -1141,8 +1156,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-logarítmica-2" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="complejidad-logarítmica-2"><span class="header-section-number">3.3.2</span> Complejidad Logarítmica</h3>
+<section id="complejidad-logarítmica-2" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-logarítmica-2">Complejidad Logarítmica</h3>
 <p><span class="math inline">\(O(log(n))\)</span></p>
 <div id="1022f38f-ae1b-4d8f-b76b-9e4136b1024b" class="cell" data-execution_count="63">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>b_d1<span class="op">=</span> <span class="pp">@benchmarkable</span> <span class="fu">nth_fibonacci</span>(<span class="op">$</span>n)</span>
@@ -1162,8 +1177,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-lineal-2" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="complejidad-lineal-2"><span class="header-section-number">3.3.3</span> Complejidad Lineal</h3>
+<section id="complejidad-lineal-2" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-lineal-2">Complejidad Lineal</h3>
 <p><span class="math inline">\(O(n)\)</span></p>
 <div id="6093d234-e220-4629-89da-90887a0995b5" class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(n)</span></span>
@@ -1184,8 +1199,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-de-la-forma-2" class="level3" data-number="3.3.4">
-<h3 data-number="3.3.4" class="anchored" data-anchor-id="complejidad-de-la-forma-2"><span class="header-section-number">3.3.4</span> Complejidad de la forma</h3>
+<section id="complejidad-de-la-forma-2" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-de-la-forma-2">Complejidad de la forma</h3>
 <p><span class="math inline">\(O(nlog(n))\)</span></p>
 <div id="fc6932e7-d744-4180-bb76-3dc597bee62d" class="cell" data-execution_count="65">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(nlog(n))</span></span>
@@ -1206,8 +1221,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-cuadrática-2" class="level3" data-number="3.3.5">
-<h3 data-number="3.3.5" class="anchored" data-anchor-id="complejidad-cuadrática-2"><span class="header-section-number">3.3.5</span> Complejidad cuadrática</h3>
+<section id="complejidad-cuadrática-2" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-cuadrática-2">Complejidad cuadrática</h3>
 <p><span class="math inline">\(O(n^2)\)</span></p>
 <div id="a7683463-af30-4a05-84ea-7ffc462222f8" class="cell" data-execution_count="66">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(n^2)</span></span>
@@ -1228,8 +1243,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-cúbica-2" class="level3" data-number="3.3.6">
-<h3 data-number="3.3.6" class="anchored" data-anchor-id="complejidad-cúbica-2"><span class="header-section-number">3.3.6</span> Complejidad cúbica</h3>
+<section id="complejidad-cúbica-2" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-cúbica-2">Complejidad cúbica</h3>
 <p><span class="math inline">\(O(n^3)\)</span></p>
 <p>Después de esperar casi 11 hrs la macro de becnhmark <code>@benchmarkatable</code> no terminaba de ejecutarse por lo que se decide interrumpir el proceso debido a que hay mas mediciones por hacer y satura al equipo, sin embargo se atribuye el excesivo tiempo al tamaño que ocupa en memoria las matrices, por lo que se decide hacer la medición con la macro <code>@btime</code> si bien no da detalles de un benchmark como tal sí permite hacer una medición.</p>
 <div id="d81ee60d-f15f-4ffa-9f02-816f4a2d9478" class="cell" data-scrolled="true" data-execution_count="44">
@@ -1273,8 +1288,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="n100000" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="n100000"><span class="header-section-number">3.4</span> n=100000</h2>
+<section id="n100000" class="level2">
+<h2 class="anchored" data-anchor-id="n100000">n=100000</h2>
 <p>Se realizan mediciones para una n=100000</p>
 <div id="3676461c-2b16-461b-a1ef-07accc2b662f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span><span class="fl">100000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1282,8 +1297,8 @@ window.Quarto = {
 <pre><code>100000</code></pre>
 </div>
 </div>
-<section id="complejidad-2" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="complejidad-2"><span class="header-section-number">3.4.1</span> Complejidad</h3>
+<section id="complejidad-2" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-2">Complejidad</h3>
 <p><span class="math inline">\(O(1)\)</span></p>
 <div id="0d686614-790e-474f-826a-ff3122369771" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="pp">@benchmarkable</span> <span class="fu">arreglo</span>(A, <span class="op">$</span>n) setup<span class="op">=</span>(A<span class="op">=</span><span class="fu">rand</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">100</span>, <span class="op">$</span>n))</span>
@@ -1303,8 +1318,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-logarítmica-3" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="complejidad-logarítmica-3"><span class="header-section-number">3.4.2</span> Complejidad logarítmica</h3>
+<section id="complejidad-logarítmica-3" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-logarítmica-3">Complejidad logarítmica</h3>
 <p><span class="math inline">\(O(log(n))\)</span></p>
 <div id="979d74eb-7bbf-4502-aa92-dacb9175e3a2" class="cell" data-execution_count="80">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>b_d1<span class="op">=</span> <span class="pp">@benchmarkable</span> <span class="fu">nth_fibonacci</span>(<span class="op">$</span>n)</span>
@@ -1324,8 +1339,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-lineal-3" class="level3" data-number="3.4.3">
-<h3 data-number="3.4.3" class="anchored" data-anchor-id="complejidad-lineal-3"><span class="header-section-number">3.4.3</span> Complejidad Lineal</h3>
+<section id="complejidad-lineal-3" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-lineal-3">Complejidad Lineal</h3>
 <p><span class="math inline">\(O(n)\)</span></p>
 <p>Para este caso notamos que benchmark solo puede hacer una evaluación y una muestra por lo que ya tienen un orden de crecimiento costoso para este tamaño de problema.</p>
 <div id="7431d696-2976-4715-9b4c-4eb9b4ada541" class="cell" data-execution_count="38">
@@ -1342,8 +1357,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-de-la-forma-3" class="level3" data-number="3.4.4">
-<h3 data-number="3.4.4" class="anchored" data-anchor-id="complejidad-de-la-forma-3"><span class="header-section-number">3.4.4</span> Complejidad de la forma</h3>
+<section id="complejidad-de-la-forma-3" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-de-la-forma-3">Complejidad de la forma</h3>
 <p><span class="math inline">\(O(nlog(n))\)</span></p>
 <div id="98d24441-f70a-4ff4-ab0f-fab3673a72cf" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(nlog(n))</span></span>
@@ -1364,8 +1379,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-cuadrática-3" class="level3" data-number="3.4.5">
-<h3 data-number="3.4.5" class="anchored" data-anchor-id="complejidad-cuadrática-3"><span class="header-section-number">3.4.5</span> Complejidad cuadrática</h3>
+<section id="complejidad-cuadrática-3" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-cuadrática-3">Complejidad cuadrática</h3>
 <p><span class="math inline">\(O(n^2)\)</span></p>
 <div id="cf20de07-ca13-425c-8232-870ab5cd7497" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(n^2)</span></span>
@@ -1386,14 +1401,14 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-cúbica-3" class="level3" data-number="3.4.6">
-<h3 data-number="3.4.6" class="anchored" data-anchor-id="complejidad-cúbica-3"><span class="header-section-number">3.4.6</span> Complejidad cúbica</h3>
+<section id="complejidad-cúbica-3" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-cúbica-3">Complejidad cúbica</h3>
 <p><span class="math inline">\(O(n^3)\)</span></p>
 <p>Para este caso no hay forma de encontrar la medición ya que al ejecutarlo nos arroja un mensaje de error “OutOfMemoryError” indicando que es muy grande los paramentros para la función, por lo que en este caso se queda sin una medición experimental</p>
 </section>
 </section>
-<section id="n1000000" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="n1000000"><span class="header-section-number">3.5</span> n=1000000</h2>
+<section id="n1000000" class="level2">
+<h2 class="anchored" data-anchor-id="n1000000">n=1000000</h2>
 <p>Finalmente llegamos al valor de n demasiado grande, de este se espera poder recabar datos hasta la complejiddad <span class="math inline">\(O(nlog(n))\)</span> ya que las demás son muy grandes para el tamaño del problema. Se omiten los intentos para <span class="math inline">\(O(n^3)\)</span> ya que hay errores de memoria.</p>
 <p>Para determinar el tamaño de la n asintóticamente grande se intentaron las mediciones para las complejidades de <span class="math inline">\(O(1)\)</span>, <span class="math inline">\(O(n)\)</span> y <span class="math inline">\(O(nlog(n))\)</span> con un tamaño de problema <span class="math inline">\(n=100000000\)</span>, sin embargo al ejecutarlas el kernel de jupyter se reniciaba, haciendo imposible la medición, algo que era esperado, aunque no para esas complejidades que no tienen un crecimiento tan rápido, pero es más probable que sea debido a que el tamaño de problema es muy grande como para pasar un arreglo de ese tamaño. Por lo que se decide trabajar con una <span class="math inline">\(n=1000000\)</span>.</p>
 <div id="a5f68815-2472-47ea-98bb-1dc292d119aa" class="cell" data-execution_count="48">
@@ -1402,8 +1417,8 @@ window.Quarto = {
 <pre><code>1000000</code></pre>
 </div>
 </div>
-<section id="complejidad-3" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="complejidad-3"><span class="header-section-number">3.5.1</span> Complejidad</h3>
+<section id="complejidad-3" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-3">Complejidad</h3>
 <p><span class="math inline">\(O(1)\)</span></p>
 <div id="e1804762-4423-4a2d-a5e1-1e1901ebdceb" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="pp">@benchmarkable</span> <span class="fu">arreglo</span>(A, <span class="op">$</span>n) setup<span class="op">=</span>(A<span class="op">=</span><span class="fu">rand</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">100</span>, <span class="op">$</span>n))</span>
@@ -1423,8 +1438,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-logarítmica-4" class="level3" data-number="3.5.2">
-<h3 data-number="3.5.2" class="anchored" data-anchor-id="complejidad-logarítmica-4"><span class="header-section-number">3.5.2</span> Complejidad logarítmica</h3>
+<section id="complejidad-logarítmica-4" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-logarítmica-4">Complejidad logarítmica</h3>
 <p><span class="math inline">\(O(log(n))\)</span></p>
 <div id="1fd48bc4-1a74-4e88-b8ed-64d341e84249" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>b_a1<span class="op">=</span> <span class="pp">@benchmarkable</span> <span class="fu">nth_fibonacci</span>(<span class="op">$</span>n)</span>
@@ -1444,8 +1459,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-lineal-4" class="level3" data-number="3.5.3">
-<h3 data-number="3.5.3" class="anchored" data-anchor-id="complejidad-lineal-4"><span class="header-section-number">3.5.3</span> Complejidad Lineal</h3>
+<section id="complejidad-lineal-4" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-lineal-4">Complejidad Lineal</h3>
 <p><span class="math inline">\(O(n)\)</span></p>
 <p>Para este caso, se decide usar nuevamente la macro <code>@btime</code> para obtener una medición ya que con <code>@benchmark</code> no terminaba su ejecución después de 3 hrs.</p>
 <div id="0cb5d13d-a73a-424b-a3a8-9a1e10add933" class="cell" data-execution_count="47">
@@ -1459,8 +1474,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-de-la-forma-4" class="level3" data-number="3.5.4">
-<h3 data-number="3.5.4" class="anchored" data-anchor-id="complejidad-de-la-forma-4"><span class="header-section-number">3.5.4</span> Complejidad de la forma</h3>
+<section id="complejidad-de-la-forma-4" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-de-la-forma-4">Complejidad de la forma</h3>
 <p><span class="math inline">\(O(nlog(n))\)</span></p>
 <div id="460852b8-a053-48c8-b8ce-1233cf625ee3" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#O(nlog(n))</span></span>
@@ -1481,8 +1496,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="complejidad-cuadrática-4" class="level3" data-number="3.5.5">
-<h3 data-number="3.5.5" class="anchored" data-anchor-id="complejidad-cuadrática-4"><span class="header-section-number">3.5.5</span> Complejidad cuadrática</h3>
+<section id="complejidad-cuadrática-4" class="level3">
+<h3 class="anchored" data-anchor-id="complejidad-cuadrática-4">Complejidad cuadrática</h3>
 <p><span class="math inline">\(O(n^2)\)</span></p>
 <p>Para este caso, directamente se realizó la medición con <code>@btime</code></p>
 <div id="4cf3a471-39e6-417e-a4bf-0f0bc09727de" class="cell" data-execution_count="51">
@@ -1495,10 +1510,10 @@ window.Quarto = {
 </section>
 </section>
 </section>
-<section id="resultados" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Resultados</h1>
-<section id="tiempos-experimentales" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="tiempos-experimentales"><span class="header-section-number">4.1</span> Tiempos experimentales</h2>
+<section id="resultados" class="level1">
+<h1>Resultados</h1>
+<section id="tiempos-experimentales" class="level2">
+<h2 class="anchored" data-anchor-id="tiempos-experimentales">Tiempos experimentales</h2>
 <p>Con los algoritmos implementados se pudieron obtener mediciones para casi todos los tamaños de problema, sin embargo se tuvieron que usar diferentes formas de medición para <span class="math inline">\(O(n^3)\)</span> para <span class="math inline">\(n=10000\)</span>, <span class="math inline">\(O(n)\)</span> y <span class="math inline">\(O(n^2)\)</span> para <span class="math inline">\(n=1000000\)</span> acudiendo a la macro de <code>@btime</code>.</p>
 <p>Las medidas reflejadas en la tabla son los datos tomados de la mediana del benchamark, a excepción de los medidos con <code>@btime</code>.</p>
 <p>Con los algoritmos escogidos notamos que solo para <span class="math inline">\(n=100\)</span> tuvieron el comportamiento esperado de acuerdo al orden de crecimiento del mejor caso, sin embargo a partir de <span class="math inline">\(n=1000\)</span> notamos que el algoritmo de bubble sort tomo más tiempo incluso que el de insertion sort.</p>
@@ -1581,8 +1596,8 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="tiempos-teóricos" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="tiempos-teóricos"><span class="header-section-number">4.2</span> Tiempos teóricos</h2>
+<section id="tiempos-teóricos" class="level2">
+<h2 class="anchored" data-anchor-id="tiempos-teóricos">Tiempos teóricos</h2>
 <p>Para tener una idea de cuánto tiempo habrian tomado los algoritmos de crecimiento más grande se refleja a continuación una estimación suponiendo que cada operación tiene un costo de 1 ns, aunque para simplificar el cálculo se toma en cuenta una sola operación para cada algoritmo con ese costo para sustituirlo en las funciones <span class="math inline">\(f_1(n)=2^n\)</span>, <span class="math inline">\(f_2(n)=n!\)</span> y <span class="math inline">\(f_3(n)=n^n\)</span>, las cuales corresponden a los órdenes de crecimiento presentados en la tabla, para los diferentes valores de n.</p>
 <table class="caption-top table">
 <colgroup>
@@ -1638,18 +1653,18 @@ window.Quarto = {
 <p>Como podemos notar incluso para un valor de n no tan grande como <span class="math inline">\(n=100\)</span> tienen tiempos demasiado grandes tan grandes que para n = 10000 ya es inimagible el tiempo que tardarían. Aunque las cantidades están expresadas en ns, no es difícil ver que siguen siendo tiempo muy enormes si queremos pasarlo a horas.</p>
 </section>
 </section>
-<section id="conclusiones" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Conclusiones</h1>
+<section id="conclusiones" class="level1">
+<h1>Conclusiones</h1>
 <p>En este trabajo para poder abordar los diferentes órdenes de crecimiento se escogieron algoritmos que tuvieran el crecimiento de las gráficas presentadas al principio, dado que las complejidades con crecimiento exponencial y factorial tienen un costo computacional muy alto, no fue posible generar experimentos ni con <span class="math inline">\(n=100\)</span> provocando que quedaran fuera de todas nuestras métricas, siendo que se tuvieron que dar aproximaciones teóricas para esos algoritmos encontrando valores excesivos y por ende imposibles de computar. Sin embargo aunque dichos algoritmos con esas complejidas no son usados, son útiles para entender la lógica de la implementación que se debe mejorar para conseguir los objetivos que busca el algoritmo. Se encontró una forma útil de hacer mediciones de tiempo a través de la biblioteca de julia <code>BenchmarkTools</code> para poder generar mediciones confiables, la cual seguirá siendo usada para todas las prácticas. Con esto nos quedamos que cualquier algoritmo que se use para grandes cantidades de datos hay que buscar las complejidades de menor crecimiento siendo <span class="math inline">\(O(log(n))\)</span> y <span class="math inline">\(O(nlog(n))\)</span> lo cual es todo un área de investigación dado que no es algo sencillo.</p>
 </section>
-<section id="algoritmos-implementados" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Algoritmos implementados</h1>
+<section id="algoritmos-implementados" class="level1">
+<h1>Algoritmos implementados</h1>
 <p>La elección de algoritmos de ordenamiento se hizo de acuerdo a la tabla “Sorting Algorithms Cheat Sheet” <a href="#Referencias">²</a> en la que se escogieron los tiempos de complejidad de acuerdo al mejor caso, para su implementación se agrega en cada uno la referencia respectiva. En el caso del algoritmo de complejidad <span class="math inline">\(O(log(n))\)</span> así como el de <span class="math inline">\(O(n!)\)</span> se obtuvieron de este <a href="https://www.geeksforgeeks.org">sitio web</a>. Y para el algoritmo de complejidad <span class="math inline">\(O(n^3)\)</span> se obtuvo del Cormen <a href="#Referencias">³</a></p>
 <p>Antes de probar los algoritmos con los valores de <span class="math inline">\(n\)</span> del reporte, se validaron que tuvieran el comportamiento adecuado para datos pequeños es decir para una <span class="math inline">\(n=10\)</span></p>
 <p>Hay que hacer notar que la implementación de estos algoritmos se hizo de forma que tuvieran el menor número de inicializaciones de variables dentro de la función ya que para hacer una medición más precisa del algoritmo en sí, es bueno tener esas precauciones como incluso lo menciona el manual de BenchmarkTools<a href="#Referencias">¹</a></p>
 <p>Se muestran a continuación los algoritmos usados en orden de menor a mayor complejidad.</p>
-<section id="acceder-a-un-arreglo" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="acceder-a-un-arreglo"><span class="header-section-number">6.1</span> Acceder a un arreglo</h2>
+<section id="acceder-a-un-arreglo" class="level2">
+<h2 class="anchored" data-anchor-id="acceder-a-un-arreglo">Acceder a un arreglo</h2>
 <p><span class="math inline">\(O(1)\)</span></p>
 <p>Se revisa la tabla de “Data Structure Operations Cheat Sheet” <a href="#Referencias">²</a> y se observa que el arrreglo tiene complejidad <span class="math inline">\(O(1)\)</span> por lo que se hace un programa muy sencillo para poder acceder a uno de sus datos</p>
 <div id="a385b64a-39b1-4b57-935b-5b382263cb08" class="cell" data-execution_count="8">
@@ -1664,8 +1679,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="cálculo-de-los-números-de-fibonacci" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="cálculo-de-los-números-de-fibonacci"><span class="header-section-number">6.2</span> Cálculo de los números de fibonacci</h2>
+<section id="cálculo-de-los-números-de-fibonacci" class="level2">
+<h2 class="anchored" data-anchor-id="cálculo-de-los-números-de-fibonacci">Cálculo de los números de fibonacci</h2>
 <p><span class="math inline">\(O(log(n))\)</span></p>
 <p>La implementación del algoritmo de fibonacci con matriz de exponenciación se realiza a partir del código encontrado en “Geeks for geeks” <a href="#Referencias">⁴</a> por lo que se hizo la traducción del ese código en python a julia.</p>
 <div id="54ef0e9a-ccc6-42ea-b3e2-c87c68e8dea8" class="cell" data-execution_count="5">
@@ -1725,8 +1740,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="bubble-sort" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="bubble-sort"><span class="header-section-number">6.3</span> Bubble Sort</h2>
+<section id="bubble-sort" class="level2">
+<h2 class="anchored" data-anchor-id="bubble-sort">Bubble Sort</h2>
 <p><span class="math inline">\(O(n)\)</span></p>
 <p>Se implementa el algoritmo Bubble Sort de acuerdo al pseudocódigo encontrado en Cormen <a href="#Referencias">³</a> y se hace una ligera modificación para los arreglos que no sean impares.</p>
 <div id="55127d90-c146-4e89-b313-863ae9f5395d" class="cell" data-execution_count="12">
@@ -1749,8 +1764,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="merge-sort" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="merge-sort"><span class="header-section-number">6.4</span> Merge Sort</h2>
+<section id="merge-sort" class="level2">
+<h2 class="anchored" data-anchor-id="merge-sort">Merge Sort</h2>
 <p><span class="math inline">\(O(nlog(n))\)</span></p>
 <p>Para esta complejidad se implementa Merge Sort de acuerdo a lo encontrado en Cormen <a href="#Referencias">³</a></p>
 <div id="51c6d7fb-5528-4f0d-ad28-4fd45f4c0a71" class="cell" data-execution_count="16">
@@ -1799,8 +1814,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="insertion-sort" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="insertion-sort"><span class="header-section-number">6.5</span> Insertion Sort</h2>
+<section id="insertion-sort" class="level2">
+<h2 class="anchored" data-anchor-id="insertion-sort">Insertion Sort</h2>
 <p><span class="math inline">\(O(n^2)\)</span></p>
 <p>Se implementa el algoritmo de Insertion Sort de acuerdo a Cormen <a href="#Referencias">³</a></p>
 <div id="9513b769-a2c9-48df-95e9-bd22f3e72ccd" class="cell" data-execution_count="50">
@@ -1824,8 +1839,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="multiplicación-de-matrices" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="multiplicación-de-matrices"><span class="header-section-number">6.6</span> Multiplicación de matrices</h2>
+<section id="multiplicación-de-matrices" class="level2">
+<h2 class="anchored" data-anchor-id="multiplicación-de-matrices">Multiplicación de matrices</h2>
 <p><span class="math inline">\(O(n^3)\)</span></p>
 <p>Se implementa la multiplicación de matrices cuadradas de acuerdo a Cormen <a href="#Referencias">³</a></p>
 <div id="e941b64a-4379-44a8-a5aa-212dfe966774" class="cell" data-scrolled="true" data-execution_count="28">
@@ -1855,8 +1870,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="cálculo-de-los-números-de-fibonacci-recursivo" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="cálculo-de-los-números-de-fibonacci-recursivo"><span class="header-section-number">6.7</span> Cálculo de los números de fibonacci (Recursivo)</h2>
+<section id="cálculo-de-los-números-de-fibonacci-recursivo" class="level2">
+<h2 class="anchored" data-anchor-id="cálculo-de-los-números-de-fibonacci-recursivo">Cálculo de los números de fibonacci (Recursivo)</h2>
 <p><span class="math inline">\(O(a^n)\)</span></p>
 <p>Para esta implementación se utiliza el código de Fibonacci encontrado en github <a href="#Referencias">⁵</a></p>
 <div id="5e975cc5-5890-4667-aa86-71a8fc7a713d" class="cell" data-scrolled="true" data-execution_count="24">
@@ -1870,8 +1885,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="travelling-salesman-problem" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="travelling-salesman-problem"><span class="header-section-number">6.8</span> Travelling Salesman Problem</h2>
+<section id="travelling-salesman-problem" class="level2">
+<h2 class="anchored" data-anchor-id="travelling-salesman-problem">Travelling Salesman Problem</h2>
 <p><span class="math inline">\(O(n!)\)</span></p>
 <p>Se decide implementar el algoritmo encontrado en “Geeks for geeks” <a href="#Referencias">⁶</a> y se hace la traducción al lenguaje de julia</p>
 <div id="6cc0ba42-a032-4d83-b42b-f6f08040894c" class="cell" data-execution_count="58">
@@ -1947,8 +1962,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="caminos-completos-en-un-grafo" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="caminos-completos-en-un-grafo"><span class="header-section-number">6.9</span> Caminos completos en un grafo</h2>
+<section id="caminos-completos-en-un-grafo" class="level2">
+<h2 class="anchored" data-anchor-id="caminos-completos-en-un-grafo">Caminos completos en un grafo</h2>
 <p><span class="math inline">\(O(n^n)\)</span></p>
 <p>Se implementó una función para generar todos los caminos de un grafo completo, por lo que solo se probo para n=3 sin embargo no se sugiere probar para n=15 o aproximadas a, ya que como vimos en los tiempos teóricos, es muy grande (Por supuesto al intentar esa ejecución en mi equipo se quedo trabada en ese proceso y se tuvo que hacer un hard reset, no lo hagan en casa)</p>
 <div id="3b67a1aa-2729-4f23-9e99-6da8a813e710" class="cell">
@@ -1984,8 +1999,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="referencias" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Referencias</h1>
+<section id="referencias" class="level1">
+<h1>Referencias</h1>
 <p>Aquí están las referencias en formato IEEE:</p>
 <p>[1] <strong>BenchmarkTools.jl</strong>, <em>Benchmarking basics</em>. [Online]. Available: <a href="https://juliaci.github.io/BenchmarkTools.jl/dev/manual/#Benchmarking-basics">https://juliaci.github.io/BenchmarkTools.jl/dev/manual/#Benchmarking-basics</a></p>
 <p>[2] N. Karumanchi, <em>Data Structures and Algorithms Made Easy in Java</em>. CareerMonk Publications, 2011.</p>
