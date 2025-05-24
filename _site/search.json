@@ -1,0 +1,480 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bienvenido",
+    "section": "",
+    "text": "Bienvenido\nEsta página contiene todas las prácticas finales desarrolladas en el curso de Análisis de Algoritmos de la MCDI en INFOTEC. Las cuales se disribuyen en una práctica por unidad, dichas unidades son.\n\nIntroducción al análisis de algoritmos\nEstructuras de datos\nAlgoritmos de ordenamiento por comparación\nAlgoritmos de búsqueda por comparación\nAlgoritmos de intersección y unión de conjuntos en el modelo de comparación",
+    "crumbs": [
+      "Bienvenido"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html#contenido-del-libro",
+    "href": "index.html#contenido-del-libro",
+    "title": "Prefacio",
+    "section": "",
+    "text": "Este libro esta diseñado para ser impartido en un semestre de licenciatura o maestría con un enfoque experimental, de Ingeniería en Computación o Ciencias de la Computación, así como Ciencia de Datos. Los algoritmos que se van develando desentrañan los algoritmos clásicos de Recuperación de Información, algoritmos detrás de grandes máquinas de búsqueda, sistemas de información basados en similitud, retrieval augmented generation (RAG), así como de los métodos detrás de la aceleración de otras técnicas de análisis de datos como agrupamiento y reducción de dimensión no-lineal.\n\nEl ?@sec-julia se dedica a revisar el lenguaje de programación Julia, desde un punto de vista de alguien que podría no conocer el lenguaje, pero que definitivamente sabe programar y esta familiarizado con los conceptos generales de un lenguaje de programación moderno.\nEl ?@sec-analisis introduce los conceptos de análisis asintótico y compara ordenes de crecimiento con la idea de formar intuición.\nEn el ?@sec-estructuras nos encontramos con las estructuras de datos elementales como son las estructuras de datos lineales y de acceso aleatorio, y su organización en memoria.\nEl ?@sec-ordenamiento esta dedicado a algoritmos de ordenamiento en el modelo de comparación, estudia algoritmos tanto de peor caso como aquellos que toman ventaja de la distribución de entrada.\nEn el ?@sec-busqueda abordamos algoritmos de búsqueda en arreglos ordenados en el modelo de comparación. De nueva cuenta se abordan algoritmos de peor caso y algoritmos que pueden sacar ventaja de instancias fáciles.\nFinalmente, el ?@sec-intersecciones estudia algoritmos de intersección de conjuntos, los cuales son la base de sistemas de información capaces de manipular cantidades enormes de datos."
+  },
+  {
+    "objectID": "index.html#trabajo-en-progreso",
+    "href": "index.html#trabajo-en-progreso",
+    "title": "Prefacio",
+    "section": "",
+    "text": "Este libro es un trabajo en progreso, que se pretende términar durante el primer semestre de 2025, mientras se imparte el curso Análisis de algoritmos en la Maestría en Ciencia de Datos e Información de INFOTEC, México. El perfil de ingreso de la maestría es multidisciplinario, y esto es parte esencial del diseño de este libro.\nEn particular, los capítulos 1, 2, y 3 tienen un avance significativo, aunque no estan terminados. El resto de los capítulos ese encuentran en un estado incipiente."
+  },
+  {
+    "objectID": "index.html#licencia",
+    "href": "index.html#licencia",
+    "title": "Prefacio",
+    "section": "",
+    "text": "Esta obra está bajo una Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional"
+  },
+  {
+    "objectID": "Practica1.html",
+    "href": "Practica1.html",
+    "title": "PRÁCTICA 1",
+    "section": "",
+    "text": "MEJORAS:",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#o1-vs-ologn",
+    "href": "Practica1.html#o1-vs-ologn",
+    "title": "PRÁCTICA 1",
+    "section": "2.1 \\(O(1)\\) vs \\(O(log(n))\\)",
+    "text": "2.1 \\(O(1)\\) vs \\(O(log(n))\\)\n\nusing Plots, LaTeXStrings\n\n\nn = 500 \nplot(1:n, [5 for x in 1:n], label=L\"c\")\nplot!(1:n, [log(x) for x in 1:n], label=L\"\\log{n}\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSe observa que la función de crecimiento para \\(O(log(n))\\) es muy pequeña es decir, incluso después de 500 puntos sus valores en \\(y\\) no superan a 7, por lo que funciones de crecimiento de este tipo son ideales para un algoritmo, por supuesto el \\(O(1)\\) es constante y hallar algoritmos que tengan ese comportamiento solo es posible si es amortizado.",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#on-vs-on-log-n",
+    "href": "Practica1.html#on-vs-on-log-n",
+    "title": "PRÁCTICA 1",
+    "section": "2.2 \\(O(n)\\) vs \\(O(n log (n))\\)",
+    "text": "2.2 \\(O(n)\\) vs \\(O(n log (n))\\)\n\nn=50\nplot(1:n, [x for x in 1:n], label=L\"n\")\nplot!(1:n, [x*log(x) for x in 1:n], label=L\"n\\log{n}\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEn el caso del orden de crecimiento \\(O(nlog(n))\\) se ve que tiene un crecimiento rápido, ya que al observar el crecimiento lineal de \\(O(n)\\), lo supera dentro de los 10 primeros puntos.",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#on²-vs-on³",
+    "href": "Practica1.html#on²-vs-on³",
+    "title": "PRÁCTICA 1",
+    "section": "2.3 \\(O(n²)\\) vs \\(O(n³)\\)",
+    "text": "2.3 \\(O(n²)\\) vs \\(O(n³)\\)\n\nn=50\nplot(1:n, [x*x for x in 1:n ], label=L\"x^2\")\nplot!(1:n, [x*x*x for x in 1:n], label=L\"x^3\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDada la naturaleza de las funciones que son polinomiales se observa que la función que llega al orden de \\(10^5\\) es \\(x^3\\) en los primeros 50 puntos, mientras que \\(x^2\\) llega apenas a 2500.",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#oan-vs-on",
+    "href": "Practica1.html#oan-vs-on",
+    "title": "PRÁCTICA 1",
+    "section": "2.4 \\(O(a^n)\\) vs \\(O(n!)\\)",
+    "text": "2.4 \\(O(a^n)\\) vs \\(O(n!)\\)\n\nn=15\nplot(1:n, [2^x for x in 1:n ], label=L\"2^n\")\nplot!(1:n, [factorial(x) for x in 1:n], label=L\"n!\")\nplot!(1:n, [7^x for x in 1:n ], label=L\"7^n\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPara este caso se detecta un comportamiento relevante, ya que la función de crecimiento \\(O(a^n)\\) al depender del valor de \\(a\\) puede tener un crecimiento menor o uno mucho mayor, como en la gráfica que para un valor de \\(a=2\\) en 15 puntos llega al orden de \\(3x10^4\\) mientras que cuando \\(a=7\\) supera por mucho incluso al orden de crecimiento de \\(O(n!)\\) llegando ambas a tener un orden \\(10^{12}\\).\nSin embargo aunque \\(O(a^n)\\) sea un poco menor para ciertos valores de \\(a\\) tiene un crecimiento muy rápido y lo es mucho mas para \\(O(n!)\\), siendo estos órdenes de crecimiento no aptos para algoritmos.",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#on-vs-onn",
+    "href": "Practica1.html#on-vs-onn",
+    "title": "PRÁCTICA 1",
+    "section": "2.5 \\(O(n!)\\) vs \\(O(n^n)\\)",
+    "text": "2.5 \\(O(n!)\\) vs \\(O(n^n)\\)\n\nn=15\nplot(1:n, [factorial(x) for x in 1:n], label=L\"n!\")\nplot!(1:n, [x^x for x in 1:n ], label=L\"n^n\")\n\n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n  \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAhora en estos órdenes de crecimiento, nos damos cuenta que hay incluso un crecimiento “peor” que el de \\(O(n!)\\) siendo \\(O(n^n)\\) que llega en tan solo 15 puntos al orden de \\(10^{17}\\) por lo que son órdenes de crecimiento que hay que evitar a toda costa.\nDespués de observar las anteriores comparaciones de órdenes de crecimiento podemos listarlas del menor a mayor como sigue: 1. \\(O(log(n))\\) 2. \\(O(n)\\) 3. \\(O(nlog(n))\\) 4. \\(O(x^2)\\) 5. \\(O(x^3)\\) 6. \\(O(a^n)\\) 7. \\(O(n!)\\) 8. \\(O(n^n)\\)\nSiendo las primeras 4 las que se deben considerar para la realización de los algoritmos que requieran iteraciones sobre gran cantidad de datos",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#n-100",
+    "href": "Practica1.html#n-100",
+    "title": "PRÁCTICA 1",
+    "section": "3.1 n = 100",
+    "text": "3.1 n = 100\nSe estarán tomando mediciones para una \\(n=100\\)\n\nn=100\n\n100\n\n\n\n3.1.1 Complejidad constante\n\\(O(1)\\)\n\n#O(1)\nb = @benchmarkable arreglo(A, $n) setup=(A=rand(1:100, $n))\ntune!(b)\nrun(b)    \n\n\nBenchmarkTools.Trial: 10000 samples with 997 evaluations per sample.\n Range (min … max):  19.786 ns … 77.631 ns  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     21.679 ns              ┊ GC (median):    0.00%\n Time  (mean ± σ):   22.525 ns ±  4.842 ns  ┊ GC (mean ± σ):  0.00% ± 0.00%\n   ▇▂█▄▃▄▄▂                                                   ▂\n  ▅█████████▅▄▃▄▄▁▃▁▃▁▁▁▁▁▃▅▅▇▇▇▇▇▆▆▆▇▆▇▇▆▆▆▅▆▄▅▃▄▄▁▁▁▃▃▁▄▃▃▄ █\n  19.8 ns      Histogram: log(frequency) by time      51.3 ns &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.\n\n\n\n\n\n3.1.2 Complejidad Logarítmica\n\\(O(log(n))\\)\n\nb_a1= @benchmarkable nth_fibonacci($n)\ntune!(b_a1)\nrun(b_a1)\n\n\nBenchmarkTools.Trial: 10000 samples with 206 evaluations per sample.\n Range (min … max):  364.150 ns … 68.945 μs  ┊ GC (min … max):  0.00% … 98.45%\n Time  (median):     405.993 ns              ┊ GC (median):     0.00%\n Time  (mean ± σ):   584.455 ns ±  1.567 μs  ┊ GC (mean ± σ):  17.64% ±  6.89%\n  ▆█▅▄▄▄▃▃▃▂▂▂▂▂▂▃▂▁                                           ▂\n  ███████████████████▇▇▇▇▆▆▄▅▆▅▄▆▇▅▃▄▄▅▄▄▁▁▄▁▁▁▁▃▃▃▁▁▃▁▃▁▁▃▁▁▃ █\n  364 ns        Histogram: log(frequency) by time      1.99 μs &lt;\n Memory estimate: 800 bytes, allocs estimate: 15.\n\n\n\n\n\n3.1.3 Complejidad Lineal\n\\(O(n)\\)\n\n#O(n)\nb = @benchmarkable bubbleSort(A,l) setup=(A=rand(1:100, $n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 10000 samples with 6 evaluations per sample.\n Range (min … max):  6.576 μs … 26.665 μs  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     7.238 μs              ┊ GC (median):    0.00%\n Time  (mean ± σ):   7.970 μs ±  2.022 μs  ┊ GC (mean ± σ):  0.00% ± 0.00%\n  ▂▂▄█▆▄▂▂▂▁          ▁▁▁▁▁                ▁                 ▁\n  ██████████▇▄▄▄▂▅▆▆▇██████▇▇▆▆▆▅▅▅▅▆▆▇▇▇▇███▇▇▆▅▄▄▄▄▄▅▃▄▄▅▆ █\n  6.58 μs      Histogram: log(frequency) by time     16.8 μs &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.\n\n\n\n\n\n3.1.4 Complejidad de la forma\n\\(O(nlog(n))\\)\n\n#O(nlog(n))\nb = @benchmarkable mergeSort(A, 1, l) setup=(A=rand(1:100,$n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 10000 samples with 3 evaluations per sample.\n Range (min … max):   9.604 μs …  12.717 ms  ┊ GC (min … max):  0.00% … 99.82%\n Time  (median):     11.591 μs               ┊ GC (median):     0.00%\n Time  (mean ± σ):   18.434 μs ± 157.209 μs  ┊ GC (mean ± σ):  13.96% ±  1.73%\n  ▆█▆▄▄▁     ▁▁▂▁▂▂▃▄▅▅▄▅▄▃▂▂▁▁                                ▂\n  ██████▇▆▆▇████████████████████▇█████▇▇▇▆▇▇▇▇▇▇█▆▇▇▆▆▅▄▆▆▆▆▆▅ █\n  9.6 μs        Histogram: log(frequency) by time      40.7 μs &lt;\n Memory estimate: 18.75 KiB, allocs estimate: 396.\n\n\n\n\n\n3.1.5 Complejidad cuadrática\n\\(O(n^2)\\)\n\n#O(n^2)\nb = @benchmarkable insertionSort(A,l) setup=(A=rand(1:100, $n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 10000 samples with 282 evaluations per sample.\n Range (min … max):  270.965 ns … 908.078 ns  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     306.266 ns               ┊ GC (median):    0.00%\n Time  (mean ± σ):   332.829 ns ±  65.926 ns  ┊ GC (mean ± σ):  0.00% ± 0.00%\n    ▅▄  █▆▄▄▂▂▁▂▁▁▁▁▂▁▂▂▁       ▁ ▁▂▁▁▁          ▁              ▂\n  ▅▁███▅██████████████████▇▇▇▇██████████▇▇▇██▇█████▇█▇▆▇▆▆▆▆▆█▇ █\n  271 ns        Histogram: log(frequency) by time        587 ns &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.\n\n\n\n\n\n3.1.6 Complejidad cúbica\n\\(O(n^3)\\)\n\n#O(n^3)\nb = @benchmarkable multiplicarMatrizCuadrada(A, B, C, $n) setup=(A=rand(1:100, $n, $n); B=rand(1:100, $n, $n); C=zeros($n,$n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 1575 samples with 1 evaluation per sample.\n Range (min … max):  2.575 ms …   3.777 ms  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     2.961 ms               ┊ GC (median):    0.00%\n Time  (mean ± σ):   3.022 ms ± 229.229 μs  ┊ GC (mean ± σ):  0.00% ± 0.00%\n               █▇▂▃▅▆▁▁▁       ▁                               \n  ▃▁▂▂▂▂▃▂▂▇▇▆██████████▇▇▇▅▇▅▆██▇▇▇▅▅▃▅▃▅▄▃▄▅▃▄▃▃▄▃▃▂▃▃▂▂▁▂▂ ▃\n  2.57 ms         Histogram: frequency by time        3.61 ms &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#n1000",
+    "href": "Practica1.html#n1000",
+    "title": "PRÁCTICA 1",
+    "section": "3.2 n=1000",
+    "text": "3.2 n=1000\nSe realizan mediciones para una \\(n=1000\\)\n\nn=1000\n\n1000\n\n\n\n3.2.1 Complejidad\n\\(O(1)\\)\n\nb = @benchmarkable arreglo(A, $n) setup=(A=rand(1:100, $n))\ntune!(b)\nrun(b)    \n\n\nBenchmarkTools.Trial: 10000 samples with 995 evaluations per sample.\n Range (min … max):  26.479 ns …  1.395 μs  ┊ GC (min … max): 0.00% … 96.14%\n Time  (median):     27.557 ns              ┊ GC (median):    0.00%\n Time  (mean ± σ):   30.581 ns ± 26.194 ns  ┊ GC (mean ± σ):  1.94% ±  2.31%\n  ▆█▃▄▆▄▄▂▂▁▃ ▂▄▃▂                                            ▂\n  ███████████▇█████▆▅▅▆▇▆▇▆▆▇▇▇▇▇██▇▆▇▇▆▆▆▅▄▄▄▄▅▃▄▄▃▁▅▁▄▅▆▆▆▅ █\n  26.5 ns      Histogram: log(frequency) by time      62.5 ns &lt;\n Memory estimate: 16 bytes, allocs estimate: 1.\n\n\n\n\n\n3.2.2 Complejidad Logarítmica\n\\(O(log(n))\\)\n\nb_b1= @benchmarkable nth_fibonacci($n)\ntune!(b_b1)\nrun(b_b1)\n\n\nBenchmarkTools.Trial: 10000 samples with 183 evaluations per sample.\n Range (min … max):  553.246 ns … 168.682 μs  ┊ GC (min … max):  0.00% … 99.40%\n Time  (median):     618.475 ns               ┊ GC (median):     0.00%\n Time  (mean ± σ):   889.257 ns ±   2.566 μs  ┊ GC (mean ± σ):  16.52% ±  7.19%\n  ▆▆█▅▄▄▄▃▂▂▃▂▂▁▁▁▂▁▁▁▁▁  ▁▁▂▂▂▂▁                               ▂\n  ████████████████████████████████▇▇▇▆▆▇▆▆▆▆▆▆▄▅▅▆▆▄▄▅▅▅▄▃▄▃▄▄▄ █\n  553 ns        Histogram: log(frequency) by time       1.99 μs &lt;\n Memory estimate: 1.12 KiB, allocs estimate: 22.\n\n\n\n\n\n3.2.3 Complejidad Lineal\n\\(O(n)\\)\n\n#O(n)\nb = @benchmarkable bubbleSort(A,l) setup=(A=rand(1:100, $n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 5697 samples with 1 evaluation per sample.\n Range (min … max):  730.345 μs …   1.816 ms  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     834.130 μs               ┊ GC (median):    0.00%\n Time  (mean ± σ):   868.080 μs ± 106.995 μs  ┊ GC (mean ± σ):  0.00% ± 0.00%\n  ▃▄▂▁▁▁▄█▇▅▄▃▃▃▃▄▄▅▄▃▃▂▃▃▂▃▃▃▃▂▂▂▂▁▁▁  ▁▁▁▁▁▁▁ ▁▁              ▂\n  █████████████████████████████████████████████████████▇▇▇▇▇▆▇▆ █\n  730 μs        Histogram: log(frequency) by time        1.2 ms &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.\n\n\n\n\n\n3.2.4 Complejidad de la forma\n\\(O(nlog(n))\\)\n\n#O(nlog(n))\nb = @benchmarkable mergeSort(A, 1, l) setup=(A=rand(1:100,$n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 10000 samples with 1 evaluation per sample.\n Range (min … max):  140.520 μs …  37.476 ms  ┊ GC (min … max):  0.00% … 99.27%\n Time  (median):     157.913 μs               ┊ GC (median):     0.00%\n Time  (mean ± σ):   206.285 μs ± 577.194 μs  ┊ GC (mean ± σ):  12.37% ±  5.51%\n  ▄▂▆█▆▄▄▄▃▃▂▂▂▂▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▂▃▂▂▁                          ▂\n  █████████████████████████████████████▇▇▇▆▆▆▆▆▆▆▆▅▆▆▇▆▆▆▅▄▅▅▄▅ █\n  141 μs        Histogram: log(frequency) by time        369 μs &lt;\n Memory estimate: 212.06 KiB, allocs estimate: 3998.\n\n\n\n\n\n3.2.5 Complejidad cuadrática\n\\(O(n^2)\\)\n\n#O(n^2)\nb = @benchmarkable insertionSort(A,l) setup=(A=rand(1:100, $n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 10000 samples with 9 evaluations per sample.\n Range (min … max):  19.682 μs … 79.475 μs  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     22.661 μs              ┊ GC (median):    0.00%\n Time  (mean ± σ):   24.715 μs ±  4.389 μs  ┊ GC (mean ± σ):  0.00% ± 0.00%\n        ▂██▁                                                   \n  ▁▁▃▄▄▅████▅▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ▂\n  19.7 μs         Histogram: frequency by time        39.4 μs &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.\n\n\n\n\n\n3.2.6 Complejidad cúbica\n\\(O(n^3)\\)\n\n#O(n^3)\nb = @benchmarkable multiplicarMatrizCuadrada(A, B, C, $n) setup=(A=rand(1:100, $n, $n); B=rand(1:100, $n, $n); C=zeros($n,$n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 2 samples with 1 evaluation per sample.\n Range (min … max):  3.555 s …   3.577 s  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     3.566 s              ┊ GC (median):    0.00%\n Time  (mean ± σ):   3.566 s ± 15.101 ms  ┊ GC (mean ± σ):  0.00% ± 0.00%\n  █                                                       █  \n  █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█ ▁\n  3.56 s         Histogram: frequency by time        3.58 s &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#n10000",
+    "href": "Practica1.html#n10000",
+    "title": "PRÁCTICA 1",
+    "section": "3.3 n=10000",
+    "text": "3.3 n=10000\nSe realizan mediciones para una n=10000\n\nn=10000\n\n10000\n\n\n\n3.3.1 Complejidad\n\\(O(1)\\)\n\nb = @benchmarkable arreglo(A, $n) setup=(A=rand(1:100, $n))\ntune!(b)\nrun(b)    \n\n\nBenchmarkTools.Trial: 10000 samples with 995 evaluations per sample.\n Range (min … max):  26.711 ns …  1.183 μs  ┊ GC (min … max): 0.00% … 95.53%\n Time  (median):     28.929 ns              ┊ GC (median):    0.00%\n Time  (mean ± σ):   30.966 ns ± 16.718 ns  ┊ GC (mean ± σ):  0.36% ±  0.96%\n  ▆█▃▆█▄▃▃▁▂              ▁ ▁ ▁  ▁▁▁                          ▂\n  ██████████▅▇▅▃▄▃▃▃▁▅▆▆▇███████████▇▇▆▅▅▆▅▄▄▃▅▄▄▆▆▇▆▇▇▆▆▇█▇▇ █\n  26.7 ns      Histogram: log(frequency) by time      66.1 ns &lt;\n Memory estimate: 16 bytes, allocs estimate: 1.\n\n\n\n\n\n3.3.2 Complejidad Logarítmica\n\\(O(log(n))\\)\n\nb_d1= @benchmarkable nth_fibonacci($n)\ntune!(b_d1)\nrun(b_d1)\n\n\nBenchmarkTools.Trial: 10000 samples with 125 evaluations per sample.\n Range (min … max):  728.360 ns … 117.842 μs  ┊ GC (min … max):  0.00% … 98.38%\n Time  (median):     806.660 ns               ┊ GC (median):     0.00%\n Time  (mean ± σ):     1.135 μs ±   2.898 μs  ┊ GC (mean ± σ):  17.58% ±  7.40%\n  ▅▄█▆▄▃▃▃▄▃▂▁▁▂▂▂▁▁   ▁▁▁          ▁▂▁                         ▁\n  ███████████████████████████████▇▇█████▇▇▇▆▆▅▄▄▄▄▅▅▄▃▄▄▄▄▄▄▅▅▅ █\n  728 ns        Histogram: log(frequency) by time       2.24 μs &lt;\n Memory estimate: 1.56 KiB, allocs estimate: 30.\n\n\n\n\n\n3.3.3 Complejidad Lineal\n\\(O(n)\\)\n\n#O(n)\nb = @benchmarkable bubbleSort(A,l) setup=(A=rand(1:100, $n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 36 samples with 1 evaluation per sample.\n Range (min … max):  134.409 ms … 144.647 ms  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     138.906 ms               ┊ GC (median):    0.00%\n Time  (mean ± σ):   139.210 ms ±   2.350 ms  ┊ GC (mean ± σ):  0.00% ± 0.00%\n                    ▃ ▃   ▃█ ▃     █  ▃                          \n  ▇▁▁▁▁▁▁▇▇▇▇▁▁▁▁▇▇▁█▁█▁▇▁██▇█▇▁▁▇▁█▁▇█▁▇▁▁▁▇▇▁▇▇▁▁▁▁▇▁▁▁▁▁▇▁▁▇ ▁\n  134 ms           Histogram: frequency by time          145 ms &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.\n\n\n\n\n\n3.3.4 Complejidad de la forma\n\\(O(nlog(n))\\)\n\n#O(nlog(n))\nb = @benchmarkable mergeSort(A, 1, l) setup=(A=rand(1:100,$n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 2191 samples with 1 evaluation per sample.\n Range (min … max):  1.580 ms … 35.997 ms  ┊ GC (min … max):  0.00% … 93.95%\n Time  (median):     1.848 ms              ┊ GC (median):     0.00%\n Time  (mean ± σ):   2.218 ms ±  1.460 ms  ┊ GC (mean ± σ):  13.31% ± 16.38%\n  ▄██▇▆▄▄▃▂                                                  ▁\n  ██████████▆▇██▇▆▆▆▄▅▅▄▄▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▄▁▄▆▆▆▆▆▆▆▆▆▇▇▇▇▇▇▆ █\n  1.58 ms      Histogram: log(frequency) by time     7.25 ms &lt;\n Memory estimate: 2.36 MiB, allocs estimate: 40058.\n\n\n\n\n\n3.3.5 Complejidad cuadrática\n\\(O(n^2)\\)\n\n#O(n^2)\nb = @benchmarkable insertionSort(A,l) setup=(A=rand(1:100, $n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 273 samples with 1 evaluation per sample.\n Range (min … max):  17.434 ms …  21.153 ms  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     18.253 ms               ┊ GC (median):    0.00%\n Time  (mean ± σ):   18.282 ms ± 444.754 μs  ┊ GC (mean ± σ):  0.00% ± 0.00%\n            ▁ ▁▅▂ ▁▆ ▂ ▂▂▄ ▆▂▄█    ▁▁                           \n  ▃▃▁▃▁▆▇▆▄▇█▆███▇████▆█████████▅▇▄██▆██▄▅▄▆▄▁▅▄▄▅▃▃▅▄▁▃▃▁▃▁▁▃ ▄\n  17.4 ms         Histogram: frequency by time         19.4 ms &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.\n\n\n\n\n\n3.3.6 Complejidad cúbica\n\\(O(n^3)\\)\nDespués de esperar casi 11 hrs la macro de becnhmark @benchmarkatable no terminaba de ejecutarse por lo que se decide interrumpir el proceso debido a que hay mas mediciones por hacer y satura al equipo, sin embargo se atribuye el excesivo tiempo al tamaño que ocupa en memoria las matrices, por lo que se decide hacer la medición con la macro @btime si bien no da detalles de un benchmark como tal sí permite hacer una medición.\n\n#O(n^3)\n# b = @benchmarkable multiplicarMatrizCuadrada(A, B, C, $n) setup=(A=rand(1:100, $n, $n); B=rand(1:100, $n, $n); C=zeros($n,$n))\n# tune!(b)\n# run(b)\n@btime multiplicarMatrizCuadrada(A, B, C, $n) setup=(A=rand(1:100, $n, $n); B=rand(1:100, $n, $n); C=zeros($n,$n))\n\n  8381.900 s (0 allocations: 0 bytes)\n\n\n10000×10000 Matrix{Float64}:\n 2.53644e7  2.55968e7  2.56392e7  …  2.53993e7  2.53571e7  2.55172e7\n 2.49243e7  2.49894e7  2.53936e7     2.4937e7   2.5236e7   2.51181e7\n 2.52609e7  2.51615e7  2.55934e7     2.51123e7  2.55196e7  2.54645e7\n 2.5217e7   2.51582e7  2.5622e7      2.53258e7  2.54949e7  2.54967e7\n 2.55491e7  2.55584e7  2.59572e7     2.56744e7  2.56278e7  2.57165e7\n 2.53885e7  2.52386e7  2.57849e7  …  2.54075e7  2.54256e7  2.54179e7\n 2.52657e7  2.53559e7  2.5656e7      2.52605e7  2.54743e7  2.57675e7\n 2.51652e7  2.5091e7   2.52621e7     2.50126e7  2.5153e7   2.52732e7\n 2.53764e7  2.49914e7  2.54897e7     2.50505e7  2.53589e7  2.55941e7\n 2.49897e7  2.51552e7  2.55396e7     2.51342e7  2.53261e7  2.52791e7\n 2.51448e7  2.52288e7  2.56172e7  …  2.51957e7  2.55074e7  2.54755e7\n 2.55693e7  2.56076e7  2.58849e7     2.56087e7  2.57213e7  2.5963e7\n 2.51065e7  2.51694e7  2.5491e7      2.50881e7  2.53625e7  2.5289e7\n ⋮                                ⋱                        \n 2.53312e7  2.52631e7  2.56038e7     2.53056e7  2.5602e7   2.55998e7\n 2.50332e7  2.51585e7  2.53387e7     2.50632e7  2.54008e7  2.52979e7\n 2.52975e7  2.50902e7  2.54171e7  …  2.51254e7  2.53471e7  2.53428e7\n 2.52011e7  2.53651e7  2.56604e7     2.5214e7   2.53667e7  2.56277e7\n 2.55164e7  2.54084e7  2.5671e7      2.52699e7  2.54581e7  2.55245e7\n 2.54093e7  2.53628e7  2.55706e7     2.54222e7  2.55443e7  2.54968e7\n 2.53052e7  2.52657e7  2.57346e7     2.53577e7  2.55871e7  2.57053e7\n 2.52181e7  2.51266e7  2.53892e7  …  2.52046e7  2.51566e7  2.5471e7\n 2.51753e7  2.51608e7  2.55854e7     2.52143e7  2.55039e7  2.53965e7\n 2.52762e7  2.52053e7  2.55595e7     2.51504e7  2.5431e7   2.54616e7\n 2.53386e7  2.52838e7  2.57116e7     2.53162e7  2.54297e7  2.55523e7\n 2.52605e7  2.54584e7  2.56327e7     2.52099e7  2.53765e7  2.55336e7",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#n100000",
+    "href": "Practica1.html#n100000",
+    "title": "PRÁCTICA 1",
+    "section": "3.4 n=100000",
+    "text": "3.4 n=100000\nSe realizan mediciones para una n=100000\n\nn=100000\n\n100000\n\n\n\n3.4.1 Complejidad\n\\(O(1)\\)\n\nb = @benchmarkable arreglo(A, $n) setup=(A=rand(1:100, $n))\ntune!(b)\nrun(b)    \n\n\nBenchmarkTools.Trial: 10000 samples with 995 evaluations per sample.\n Range (min … max):  26.902 ns … 100.877 ns  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     27.740 ns               ┊ GC (median):    0.00%\n Time  (mean ± σ):   29.086 ns ±   4.995 ns  ┊ GC (mean ± σ):  0.00% ± 0.00%\n  ▅█▄▃▃▆▂▃ ▁▁                                                  ▁\n  ███████████▇▆▆▅▄▁▄▁▃▁▁▁▃▁▄▅▆▅▆▇▇▇▇▇▆▆▇▇▇▆▆▅▅▅▅▄▄▃▁▃▄▃▄▄▃▄▄▁▃ █\n  26.9 ns       Histogram: log(frequency) by time      57.7 ns &lt;\n Memory estimate: 16 bytes, allocs estimate: 1.\n\n\n\n\n\n3.4.2 Complejidad logarítmica\n\\(O(log(n))\\)\n\nb_d1= @benchmarkable nth_fibonacci($n)\ntune!(b_d1)\nrun(b_d1)\n\n\nBenchmarkTools.Trial: 10000 samples with 45 evaluations per sample.\n Range (min … max):  867.889 ns … 291.502 μs  ┊ GC (min … max):  0.00% … 99.23%\n Time  (median):     905.511 ns               ┊ GC (median):     0.00%\n Time  (mean ± σ):     1.176 μs ±   4.199 μs  ┊ GC (mean ± σ):  14.69% ±  4.79%\n  ▃█▆▃▅▃▂▁ ▁                                   ▂▂▁              ▁\n  ███████████▇▇▇▅▇▇█▇█▆▇▇▇▆▆▅▅▅▄▅▃▁▄▄▅▄▅▆▆▅▆▇▆▇███▇███▆▅▁▅▄▅▅▃▄ █\n  868 ns        Histogram: log(frequency) by time       2.12 μs &lt;\n Memory estimate: 1.89 KiB, allocs estimate: 36.\n\n\n\n\n\n3.4.3 Complejidad Lineal\n\\(O(n)\\)\nPara este caso notamos que benchmark solo puede hacer una evaluación y una muestra por lo que ya tienen un orden de crecimiento costoso para este tamaño de problema.\n\n#O(n)\nb = @benchmarkable bubbleSort(A,l) setup=(A=rand(1:100, $n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 1 sample with 1 evaluation per sample.\n Single result which took 20.060 s (0.00% GC) to evaluate,\n with a memory estimate of 0 bytes, over 0 allocations.\n\n\n\n\n\n3.4.4 Complejidad de la forma\n\\(O(nlog(n))\\)\n\n#O(nlog(n))\nb = @benchmarkable mergeSort(A, 1, l) setup=(A=rand(1:100,$n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 203 samples with 1 evaluation per sample.\n Range (min … max):  19.625 ms … 42.809 ms  ┊ GC (min … max):  0.00% … 28.86%\n Time  (median):     24.919 ms              ┊ GC (median):    16.48%\n Time  (mean ± σ):   24.016 ms ±  3.330 ms  ┊ GC (mean ± σ):  13.04% ±  9.84%\n    █▃▂               ▃▁▇▃▄                                    \n  ▄▆███▄▆▄▃▃▁▁▃▃▁▁▃▃▃▇█████▆▆▆▃▃▃▃▁▃▃▁▁▃▃▁▁▁▃▁▁▁▁▁▃▁▁▁▁▁▁▁▁▁▃ ▃\n  19.6 ms         Histogram: frequency by time        34.7 ms &lt;\n Memory estimate: 26.06 MiB, allocs estimate: 400506.\n\n\n\n\n\n3.4.5 Complejidad cuadrática\n\\(O(n^2)\\)\n\n#O(n^2)\nb = @benchmarkable insertionSort(A,l) setup=(A=rand(1:100, $n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 3 samples with 1 evaluation per sample.\n Range (min … max):  1.810 s …  1.827 s  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     1.815 s             ┊ GC (median):    0.00%\n Time  (mean ± σ):   1.818 s ± 8.756 ms  ┊ GC (mean ± σ):  0.00% ± 0.00%\n  █               █                                      █  \n  █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█ ▁\n  1.81 s        Histogram: frequency by time        1.83 s &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.\n\n\n\n\n\n3.4.6 Complejidad cúbica\n\\(O(n^3)\\)\nPara este caso no hay forma de encontrar la medición ya que al ejecutarlo nos arroja un mensaje de error “OutOfMemoryError” indicando que es muy grande los paramentros para la función, por lo que en este caso se queda sin una medición experimental",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#n1000000",
+    "href": "Practica1.html#n1000000",
+    "title": "PRÁCTICA 1",
+    "section": "3.5 n=1000000",
+    "text": "3.5 n=1000000\nFinalmente llegamos al valor de n demasiado grande, de este se espera poder recabar datos hasta la complejiddad \\(O(nlog(n))\\) ya que las demás son muy grandes para el tamaño del problema. Se omiten los intentos para \\(O(n^3)\\) ya que hay errores de memoria.\nPara determinar el tamaño de la n asintóticamente grande se intentaron las mediciones para las complejidades de \\(O(1)\\), \\(O(n)\\) y \\(O(nlog(n))\\) con un tamaño de problema \\(n=100000000\\), sin embargo al ejecutarlas el kernel de jupyter se reniciaba, haciendo imposible la medición, algo que era esperado, aunque no para esas complejidades que no tienen un crecimiento tan rápido, pero es más probable que sea debido a que el tamaño de problema es muy grande como para pasar un arreglo de ese tamaño. Por lo que se decide trabajar con una \\(n=1000000\\).\n\nn=1000000\n\n1000000\n\n\n\n3.5.1 Complejidad\n\\(O(1)\\)\n\nb = @benchmarkable arreglo(A, $n) setup=(A=rand(1:100, $n))\ntune!(b)\nrun(b)    \n\n\nBenchmarkTools.Trial: 781 samples with 994 evaluations per sample.\n Range (min … max):  28.326 ns … 87.603 ns  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     31.597 ns              ┊ GC (median):    0.00%\n Time  (mean ± σ):   32.297 ns ±  5.363 ns  ┊ GC (mean ± σ):  0.00% ± 0.00%\n   ▇▆  ▆█▁                                                     \n  ███▅████▆▆▅▄▃▃▂▂▁▁▂▁▁▁▁▁▂▂▁▂▂▁▁▂▂▂▂▁▁▂▂▂▂▁▂▁▁▂▁▁▁▁▁▁▁▁▂▁▁▂▁ ▃\n  28.3 ns         Histogram: frequency by time        62.8 ns &lt;\n Memory estimate: 16 bytes, allocs estimate: 1.\n\n\n\n\n\n3.5.2 Complejidad logarítmica\n\\(O(log(n))\\)\n\nb_a1= @benchmarkable nth_fibonacci($n)\ntune!(b_a1)\nrun(b_a1)\n\n\nBenchmarkTools.Trial: 10000 samples with 10 evaluations per sample.\n Range (min … max):  1.040 μs …  1.099 ms  ┊ GC (min … max): 0.00% … 99.64%\n Time  (median):     1.135 μs              ┊ GC (median):    0.00%\n Time  (mean ± σ):   1.554 μs ± 11.330 μs  ┊ GC (mean ± σ):  8.81% ±  1.40%\n  █▇▇▄▃▅▁              ▂▃ ▃▄▃▃▃▄▃▁▂▂▁                        ▂\n  ███████▇▅▆▇▄▅▅▄▄▄▄▄▃▄██▇████████████▇▇▇▇▇▆▆▇▇▄▄▄▄▄▄▄▃▁▄▅▃▄ █\n  1.04 μs      Histogram: log(frequency) by time      3.6 μs &lt;\n Memory estimate: 2.22 KiB, allocs estimate: 42.\n\n\n\n\n\n3.5.3 Complejidad Lineal\n\\(O(n)\\)\nPara este caso, se decide usar nuevamente la macro @btime para obtener una medición ya que con @benchmark no terminaba su ejecución después de 3 hrs.\n\n# O(n)\n# b = @benchmarkable bubbleSort(A,l) setup=(A=rand(1:100, $n); l=length(A))\n# tune!(b)\n# run(b)\n@btime bubbleSort(A,l) setup=(A=rand(1:100, $n); l=length(A))\n\n  1789.982 s (0 allocations: 0 bytes)\n\n\n\n\n3.5.4 Complejidad de la forma\n\\(O(nlog(n))\\)\n\n#O(nlog(n))\nb = @benchmarkable mergeSort(A, 1, l) setup=(A=rand(1:100,$n); l=length(A))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 18 samples with 1 evaluation per sample.\n Range (min … max):  226.607 ms … 446.703 ms  ┊ GC (min … max):  4.23% … 52.54%\n Time  (median):     244.459 ms               ┊ GC (median):    11.67%\n Time  (mean ± σ):   287.597 ms ±  85.210 ms  ┊ GC (mean ± σ):  24.34% ± 17.82%\n      █                                                          \n  ▄▁▄▁█▄█▁▄▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▄▆▄ ▁\n  227 ms           Histogram: frequency by time          447 ms &lt;\n Memory estimate: 283.98 MiB, allocs estimate: 4004090.\n\n\n\n\n\n3.5.5 Complejidad cuadrática\n\\(O(n^2)\\)\nPara este caso, directamente se realizó la medición con @btime\n\n#O(n^2)\n@btime insertionSort(A,l) setup=(A=rand(1:100, $n); l=length(A))\n\n  168.925 s (0 allocations: 0 bytes)",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#tiempos-experimentales",
+    "href": "Practica1.html#tiempos-experimentales",
+    "title": "PRÁCTICA 1",
+    "section": "4.1 Tiempos experimentales",
+    "text": "4.1 Tiempos experimentales\nCon los algoritmos implementados se pudieron obtener mediciones para casi todos los tamaños de problema, sin embargo se tuvieron que usar diferentes formas de medición para \\(O(n^3)\\) para \\(n=10000\\), \\(O(n)\\) y \\(O(n^2)\\) para \\(n=1000000\\) acudiendo a la macro de @btime.\nLas medidas reflejadas en la tabla son los datos tomados de la mediana del benchamark, a excepción de los medidos con @btime.\nCon los algoritmos escogidos notamos que solo para \\(n=100\\) tuvieron el comportamiento esperado de acuerdo al orden de crecimiento del mejor caso, sin embargo a partir de \\(n=1000\\) notamos que el algoritmo de bubble sort tomo más tiempo incluso que el de insertion sort.\n\n\n\n\n\n\n\n\n\n\n\n\nComplejidad\nAlgoritmo\n\\(n=100\\)\n\\(n=1000\\)\n\\(n=10000\\)\n\\(n=100000\\)\n\\(n=1000000\\)\n\n\n\n\n\\(O(1)\\)\nAcceder a un arreglo\n21.463 ns\n27.557 ns\n28.929 ns\n27.740 ns\n31.597 ns\n\n\n\\(O(log(n))\\)\nNúmeros de Fibonacci\n405.993 ns\n618.475 ns\n806.660 ns\n905.511 ns\n1.135 us\n\n\n\\(O(n)\\)\nBubble Sort\n7.238 us\n834.130 us\n138.906 ms\n20.060 s\n1789.982 s\n\n\n\\(O(nlog(n))\\)\nMerge Sort\n11.591 us\n157.913 us\n1.848 ms\n24.919 ms\n244.459 ms\n\n\n\\(O(n^2)\\)\nInsertion Sort\n306.266 ns\n22.661 us\n18.253 ms\n1.815 s\n168.925 s\n\n\n\\(O(n^3)\\)\nMultiplicación de matrices\n2.961 ms\n3.566 s\n8381.9 s\nN/A\nN/A",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#tiempos-teóricos",
+    "href": "Practica1.html#tiempos-teóricos",
+    "title": "PRÁCTICA 1",
+    "section": "4.2 Tiempos teóricos",
+    "text": "4.2 Tiempos teóricos\nPara tener una idea de cuánto tiempo habrian tomado los algoritmos de crecimiento más grande se refleja a continuación una estimación suponiendo que cada operación tiene un costo de 1 ns, aunque para simplificar el cálculo se toma en cuenta una sola operación para cada algoritmo con ese costo para sustituirlo en las funciones \\(f_1(n)=2^n\\), \\(f_2(n)=n!\\) y \\(f_3(n)=n^n\\), las cuales corresponden a los órdenes de crecimiento presentados en la tabla, para los diferentes valores de n.\n\n\n\n\n\n\n\n\n\n\n\n\nComplejidad\nAlgoritmo\n\\(n=100\\)\n\\(n=1000\\)\n\\(n=10000\\)\n\\(n=100000\\)\n\\(n=1000000\\)\n\n\n\n\n\\(O(a^n)\\)\nFibonacci Recursivo\n1.2676 E+30 ns\n1.2676 E+301 ns\n\\(\\infty\\)\n\\(\\infty\\)\n\\(\\infty\\)\n\n\n\\(O(n!)\\)\nTSP\n9.332621544 E+157 ns\n4.0238726 E+2567 ns\n\\(\\infty\\)\n\\(\\infty\\)\n\\(\\infty\\)\n\n\n\\(O(n^n)\\)\nCaminos en un grafo\n1 E+200 ns\n\\(\\infty\\)\n\\(\\infty\\)\n\\(\\infty\\)\n\\(\\infty\\)\n\n\n\nComo podemos notar incluso para un valor de n no tan grande como \\(n=100\\) tienen tiempos demasiado grandes tan grandes que para n = 10000 ya es inimagible el tiempo que tardarían. Aunque las cantidades están expresadas en ns, no es difícil ver que siguen siendo tiempo muy enormes si queremos pasarlo a horas.",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#conclusiones",
+    "href": "Practica1.html#conclusiones",
+    "title": "PRÁCTICA 1A",
+    "section": "Conclusiones",
+    "text": "Conclusiones\nPudimos apreciar que el orden de crecimiento en los algoritmos es muy importante cuando se trata de tamaños de problemas muy grande, es decir en el área de ciencia de datos es muy relevante ya que hay cantidades enormes de datos por analizar y el poder escoger un algoritmo adecuado a esas condiciones será una herramienta para poder sacar provecho a los análisis.",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#acceder-a-un-arreglo",
+    "href": "Practica1.html#acceder-a-un-arreglo",
+    "title": "PRÁCTICA 1",
+    "section": "6.1 Acceder a un arreglo",
+    "text": "6.1 Acceder a un arreglo\n\\(O(1)\\)\nSe revisa la tabla de “Data Structure Operations Cheat Sheet” ² y se observa que el arrreglo tiene complejidad \\(O(1)\\) por lo que se hace un programa muy sencillo para poder acceder a uno de sus datos\n\nfunction arreglo(A,n)\n    return A[n]\nend    \n\n# A=rand(1:100, 100)\n# arreglo(A, length(A))\n\narreglo (generic function with 1 method)",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#cálculo-de-los-números-de-fibonacci",
+    "href": "Practica1.html#cálculo-de-los-números-de-fibonacci",
+    "title": "PRÁCTICA 1",
+    "section": "6.2 Cálculo de los números de fibonacci",
+    "text": "6.2 Cálculo de los números de fibonacci\n\\(O(log(n))\\)\nLa implementación del algoritmo de fibonacci con matriz de exponenciación se realiza a partir del código encontrado en “Geeks for geeks” ⁴ por lo que se hizo la traducción del ese código en python a julia.\n\nfunction multiply(mat1, mat2)\n    x = mat1[1,1] * mat2[1,1] + mat1[1,2] * mat2[2,1]\n    y = mat1[1,1] * mat2[1,2] + mat1[1,2] * mat2[2,2]\n    z = mat1[2,1] * mat2[1,1] + mat1[2,2] * mat2[2,1]\n    w = mat1[2,1] * mat2[1,2] + mat1[2,2] * mat2[2,2]\n\n    mat1[1,1], mat1[1,2] = x, y\n    mat1[2,1], mat1[2,2] = z, w\n\nend    \n\n    \n# Function to perform matrix exponentiation\nfunction matrix_power(mat1, n)\n  \n    # Base case for recursion\n    if n == 0\n        return 1\n    elseif n == 1\n        return 1\n    end   \n    \n    # Initialize a helper matrix\n    mat2 = [1 1 ;1 0]\n\n    # Recursively calculate mat1^(n // 2)\n    matrix_power(mat1, div(n,2))\n\n    # Square the matrix mat1\n    multiply(mat1, mat1)\n\n    # If n is odd, multiply by the helper matrix mat2\n    if n % 2 != 0\n        multiply(mat1, mat2)\n    end    \nend\n# Function to calculate the nth Fibonacci number\nfunction nth_fibonacci(n)\n    if n &lt;= 1\n        return n\n    end\n    # Initialize the transformation matrix\n    mat1 = [1 1 ;1 0]\n\n    # Raise the matrix mat1 to the power of (n - 1)\n    matrix_power(mat1, n - 1)\n\n    # The result is in the top-left cell of the matrix\n    return mat1[1,1]\nend\n# nth_fibonacci(1000)\n\nnth_fibonacci (generic function with 1 method)",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#bubble-sort",
+    "href": "Practica1.html#bubble-sort",
+    "title": "PRÁCTICA 1",
+    "section": "6.3 Bubble Sort",
+    "text": "6.3 Bubble Sort\n\\(O(n)\\)\nSe implementa el algoritmo Bubble Sort de acuerdo al pseudocódigo encontrado en Cormen ³ y se hace una ligera modificación para los arreglos que no sean impares.\n\nfunction bubbleSort(A,n)\n    for i in 1:(n -1)\n        for j in 1:n-i\n            if A[j] &gt; A[j+1]\n                A[j], A[j+1] = A[j+1], A[j]\n            end\n        end\n    end        \nend\n\n# A=[5, 2, 4,7,1,3,2,6]\n# A=rand(1:10, 100)\n# bubbleSort(A, length(A))\n# A\n\nbubbleSort (generic function with 1 method)",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#merge-sort",
+    "href": "Practica1.html#merge-sort",
+    "title": "PRÁCTICA 1",
+    "section": "6.4 Merge Sort",
+    "text": "6.4 Merge Sort\n\\(O(nlog(n))\\)\nPara esta complejidad se implementa Merge Sort de acuerdo a lo encontrado en Cormen ³\n\nfunction merge(A,p,q,r)\n    n1 = q-p+1\n    n2 = r-q\n    L=zeros(n1+1)\n    R=zeros(n2+1)\n    for i in 1:n1\n        L[i]=A[p+i-1]\n    end\n    for j in 1:n2\n        R[j] = A[q+j]\n    end\n    L[n1+1]= Inf\n    R[n2+1]= Inf\n    \n    i=1\n    j=1\n    for k in p:r\n        if L[i] &lt;= R[j]\n            A[k] = L[i]\n            i=i+1\n        else \n            A[k] = R[j]\n            j=j+1\n        end\n    end    \nend    \n\nfunction mergeSort(A,p,r)\n    if p &lt; r\n        q = div(p+r,2)\n        mergeSort(A,p,q)\n        mergeSort(A,q+1,r)\n        merge(A,p,q,r)\n    end    \n    \nend     \n# A=[5, 2, 4,7,1,3,2,6]\n# A=rand(1:10,100)\n# mergeSort(A, 1, length(A))\n# A\n\nmergeSort (generic function with 1 method)",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#insertion-sort",
+    "href": "Practica1.html#insertion-sort",
+    "title": "PRÁCTICA 1",
+    "section": "6.5 Insertion Sort",
+    "text": "6.5 Insertion Sort\n\\(O(n^2)\\)\nSe implementa el algoritmo de Insertion Sort de acuerdo a Cormen ³\n\nfunction insertionSort(A, tam)\n    for j in 2:tam\n        key = A[j]\n        i = j-1\n        while i &gt; 0 && A[i]&gt;key\n            A[i+1] = A[i]\n            i = i-1\n        end\n        A[i+1] = key\n    end\nend    \n# A=[5,2,4,7,1,3,2,6]\n# A=rand(1:10, 100)\n# insertionSort(A, length(A))\n# A\n\ninsertionSort (generic function with 1 method)",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#multiplicación-de-matrices",
+    "href": "Practica1.html#multiplicación-de-matrices",
+    "title": "PRÁCTICA 1",
+    "section": "6.6 Multiplicación de matrices",
+    "text": "6.6 Multiplicación de matrices\n\\(O(n^3)\\)\nSe implementa la multiplicación de matrices cuadradas de acuerdo a Cormen ³\n\nusing Random\nfunction multiplicarMatrizCuadrada(A, B, C, n)\n    # C = zeros(n,n)\n    for i in 1:n\n        for j in 1:n\n            C[i,j] = 0\n            for k in 1:n\n                C[i,j] +=A[i,k]*B[k,j]\n            end    \n        end   \n    end    \n   return C\nend   \n# n=100\n# Random.seed!(4) #checar este random\n# A = rand(1:9, n, n)\n# B = rand(1:9, n, n)\n# C = zeros(n,n)\n# multiplicarMatrizCuadrada(A,B,C,n)\n# @time \n# @benchmark multiplicarMatrizCuadrada(3)\n\nmultiplicarMatrizCuadrada (generic function with 1 method)",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#cálculo-de-los-números-de-fibonacci-recursivo",
+    "href": "Practica1.html#cálculo-de-los-números-de-fibonacci-recursivo",
+    "title": "PRÁCTICA 1",
+    "section": "6.7 Cálculo de los números de fibonacci (Recursivo)",
+    "text": "6.7 Cálculo de los números de fibonacci (Recursivo)\n\\(O(a^n)\\)\nPara esta implementación se utiliza el código de Fibonacci encontrado en github ⁵\n\nfunction fibonacci(n)\n  if n &lt;= 1 return 1 end\n  return fibonacci(n - 1) + fibonacci(n - 2)\nend\n\n\nfibonacci (generic function with 1 method)",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#travelling-salesman-problem",
+    "href": "Practica1.html#travelling-salesman-problem",
+    "title": "PRÁCTICA 1",
+    "section": "6.8 Travelling Salesman Problem",
+    "text": "6.8 Travelling Salesman Problem\n\\(O(n!)\\)\nSe decide implementar el algoritmo encontrado en “Geeks for geeks” ⁶ y se hace la traducción al lenguaje de julia\n\nusing Combinatorics\n\nfunction tsp(cost::Matrix{Int})\n    # Número de nodos\n    numNodes = size(cost, 1)\n    nodes = 2:numNodes\n\n    minCost = Inf\n\n    # Generar todas las permutaciones de los nodos restantes\n    for perm in permutations(nodes)\n        currCost = 0\n        currNode = 1\n\n        # Calcular el costo de la permutación actual\n        for node in perm\n            currCost += cost[currNode, node]\n            currNode = node\n        end\n\n        # Agregar el costo para regresar al nodo de inicio\n        currCost += cost[currNode, 1]\n\n        # Actualizar el costo mínimo si el costo actual es menor\n        minCost = min(minCost, currCost)\n    end\n\n    return minCost\nend\n\nfunction generate_cost_matrix(n::Int)\n    # Crear una matriz de costos vacía\n    cost_matrix = zeros(Int, n, n)\n\n    # Llenar la matriz de costos\n    for i in 1:n\n        for j in 1:n\n            if i != j\n                # Generar un costo aleatorio entre 1 y 100\n                cost_matrix[i, j] = rand(1:100)\n            end\n        end\n    end\n\n    return cost_matrix\nend\n# Ejemplo de uso\n# cost = [\n#     [0 10 15 20];\n#     [10 0 35 25];\n#     [15 35 0 30];\n#     [20 25 30 0]\n# ]\n# cost = generate_cost_matrix(10)\n# res = tsp(cost)\n# println(res)\n\n@benchmark tsp(cost) setup=(cost=generate_cost_matrix(1))\n\n\nBenchmarkTools.Trial: 10000 samples with 985 evaluations per sample.\n Range (min … max):   53.750 ns … 91.323 μs  ┊ GC (min … max):  0.00% … 99.81%\n Time  (median):     116.584 ns              ┊ GC (median):     0.00%\n Time  (mean ± σ):   132.335 ns ±  1.248 μs  ┊ GC (mean ± σ):  15.74% ±  1.73%\n  ▇▃▂▂▁                ▇█▆▆▅▄▂▂▂▁▁ ▁▁▂▁▁                       ▂\n  █████▇█▇▄▄▃▁▆▅▃▁▁▄▃▄█████████████████████████▇▇████▇▇▇▇▆▆▆▇▇ █\n  53.8 ns       Histogram: log(frequency) by time       223 ns &lt;\n Memory estimate: 128 bytes, allocs estimate: 4.",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica1.html#caminos-completos-en-un-grafo",
+    "href": "Practica1.html#caminos-completos-en-un-grafo",
+    "title": "PRÁCTICA 1",
+    "section": "6.9 Caminos completos en un grafo",
+    "text": "6.9 Caminos completos en un grafo\n\\(O(n^n)\\)\nSe implementó una función para generar todos los caminos de un grafo completo, por lo que solo se probo para n=3 sin embargo no se sugiere probar para n=15 o aproximadas a, ya que como vimos en los tiempos teóricos, es muy grande (Por supuesto al intentar esa ejecución en mi equipo se quedo trabada en ese proceso y se tuvo que hacer un hard reset, no lo hagan en casa)\n\nfunction generate_all_paths(n)\n    nodes = 1:n\n    all_paths = []\n\n    function helper(current_path)\n        if length(current_path) == n\n            push!(all_paths, copy(current_path))\n        else\n            for node in nodes\n                if node ∉ current_path\n                    push!(current_path, node)\n                    helper(current_path)\n                    pop!(current_path)\n                end\n            end\n        end\n    end\n\n    helper([])\n    return all_paths\nend\n\n# Ejemplo de uso\n#n = 15\n# paths = generate_all_paths(n)\n# for path in paths\n#     println(path)\n# end\n#@benchmark generate_all_paths($n)",
+    "crumbs": [
+      "Práctica 1"
+    ]
+  },
+  {
+    "objectID": "Practica2.html",
+    "href": "Practica2.html",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "",
+    "text": "En la realización de este reporte se aborda el desempeño para algoritmos que realizan operaciones con matrices y que son muy usados en el área de Algebra Lineal, dichos algoritmos son multiplicación de matrices de la forma Naive, multiplicación por Strassen, eliminación Gaussiana y eliminación de Gauss-Jordan. Se verá cómo es el desempeño para cada uno tanto con mediciones de tiempo como el número de operaciones que ejecuta cada uno a partir de un análisis teórico. Se hacen algunas aclaraciones de por qué se decide usar un factor de \\(n\\) ligeramente diferente para Strassen y se muestran las tablas de desempeño y total de operaciones para cada caso.\nTodas las implementaciones fueron hechas usando Julia y usando el paquete de BenchmarkTools para medidas de desempeño.\nEl reporte esta estructurado de la siguiente forma\n\nImplementaciones. Se muestra el código implementado para los 4 algoritmos\nDesempeño. Se realizan las pruebas de desempeño para \\(n=100,300\\) y \\(1000\\)\nConteo de OperacionesSe obtienen las expresiones para calcular el total de operaciones aritméticas\nResultados. Se muestran las tablas con los valores obtenidos de las medidas de desempeño vs el total de operaciones\nConclusiones. Se concluye el reporte con la opinión sobre el impacto de acceso a memoria y matrices dispersas\nReferencias. Se muestran las referencias usadas en el reporte",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica2.html#multiplicación-de-matrices",
+    "href": "Practica2.html#multiplicación-de-matrices",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "Multiplicación de matrices",
+    "text": "Multiplicación de matrices\n\nSimple (método Naive)\n\nfunction multiplicarMatrizCuadrada(A, B, C, n)\n    for i in 1:n\n        for j in 1:n\n            C[i,j] = 0\n            for k in 1:n\n                C[i,j] +=A[i,k]*B[k,j]\n            end    \n        end   \n    end    \n   return C\nend  \n\nmultiplicarMatrizCuadrada (generic function with 1 method)\n\n\n\n\nAlgoritmo de Strassen\nEl algoritmo de Strassen solo está definido para matrices que tengan tamaño 2^n como lo indica en el paper original¹ por lo que las pruebas de desempeño en la siguiente sección se usarán matrices que tengan esos tamaños.\n\nfunction strassen(A, B)\n    n = size(A, 1)  \n    if n &lt;= 64\n        return A * B\n    end\n    # Seperar matrices en cuadrantes\n    half = n ÷ 2\n    A11 = A[1:half, 1:half]\n    A12 = A[1:half, half+1:end]\n    A21 = A[half+1:end, 1:half]\n    A22 = A[half+1:end, half+1:end]\n    \n    B11 = B[1:half, 1:half]\n    B12 = B[1:half, half+1:end]\n    B21 = B[half+1:end, 1:half]\n    B22 = B[half+1:end, half+1:end]\n    \n    # Realizar productos de acuerdo al algoritmo de strassen\n    P1 = strassen(A11 + A22, B11 + B22)\n    P2 = strassen(A21 + A22, B11)\n    P3 = strassen(A11, B12 - B22)\n    P4 = strassen(A22, B21 - B11)\n    P5 = strassen(A11 + A12, B22)\n    P6 = strassen(A21 - A11, B11 + B12)\n    P7 = strassen(A12 - A22, B21 + B22)\n    \n    # Realizar las operaciones en los cuadrantes\n    # de la matriz resultante \n    C11 = P1 + P4 - P5 + P7\n    C12 = P3 + P5\n    C21 = P2 + P4\n    C22 = P1 - P2 + P3 + P6\n    \n    # Combinar los resultados en la matriz resultante\n    C = zeros(n, n)\n    C[1:half, 1:half] = C11\n    C[1:half, half+1:end] = C12\n    C[half+1:end, 1:half] = C21\n    C[half+1:end, half+1:end] = C22\n    \n    return C\nend\n\n# A = rand(128, 128)\n# B = rand(128, 128)\n# C = strassen(A, B)\n\nstrassen (generic function with 1 method)",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica2.html#eliminación-gaussiana-gauss-jordan",
+    "href": "Practica2.html#eliminación-gaussiana-gauss-jordan",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "Eliminación Gaussiana / Gauss-Jordan",
+    "text": "Eliminación Gaussiana / Gauss-Jordan\n\nEliminación Gaussiana\nLa implementación de eliminación gaussiana se uso de base el pseudocodigo encontrado en el libro de Métdos Numéricos²\n\nfunction gaussiana(A,b,n)\n# n = size(A, 1)\n    for k in 1:n-1\n        for i in  k+1:n\n            factor = A[i,k] / A[k,k]\n            for j in k:n\n                A[i,j] = A[i,j] - factor * A[k,j]\n            end\n            b[i] = b[i] - factor * b[k]\n        end\n    end\n\n#sustitucion hacia atraas\n    x = zeros(n)  \n    x[n] = b[n] / A[n, n] \n    for i in n-1:-1:1\n        sum = b[i]\n        for j in i+1:n\n            sum = sum - A[i, j] * x[j]\n        end\n        x[i] = sum / A[i, i]\n    end\n    return x\nend\n\n# A = [3 -0.1 -0.2; 0.1 7 -0.3; 0.3 -0.2 10]\n# b = [7.85, -19.3, 71.4]\n# gaussiana(A,b)\n\ngaussiana (generic function with 2 methods)\n\n\n\n\nEliminación Gauss Jordan\n\nfunction gauss_jordan(A, b, n)\n   \n    for i in 1:n\n\n        pivot = A[i, i]\n        A[i, :] = A[i, :] / pivot\n        b[i] = b[i] / pivot\n\n        for j in 1:n\n            if j != i\n                factor = A[j, i]\n                A[j, :] = A[j, :] - factor * A[i, :]\n                b[j] = b[j] - factor * b[i]\n            end\n        end\n    end\n    return b\nend\n\n# A = [3 -0.1 -0.2; 0.1 7 -0.3; 0.3 -0.2 10]\n# b = [7.85, -19.3, 71.4]\n# gauss_jordan(A, b, size(A, 1))\n\ngauss_jordan (generic function with 2 methods)",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica2.html#n-100",
+    "href": "Practica2.html#n-100",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "N = 100",
+    "text": "N = 100\n\nMultiplicaciones\n\nMultiplicación Simple\n\nn = 100\nb = @benchmarkable multiplicarMatrizCuadrada(A, B, C, $n) setup=(A=rand(1:100, $n, $n); B=rand(1:100, $n, $n); C=zeros($n,$n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 1609 samples with 1 evaluation per sample.\n Range (min … max):  2.560 ms …   4.243 ms  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     2.875 ms               ┊ GC (median):    0.00%\n Time  (mean ± σ):   2.957 ms ± 250.917 μs  ┊ GC (mean ± σ):  0.00% ± 0.00%\n         ▂▄▇▆▃▇█▃▁▁                                            \n  ▄▁▄▃▄▇▇██████████▇▇▆▇▆▇▇▇█▇▇▆▅▆▄▇▄▄▅▅▅▄▄▃▄▅▄▃▃▃▃▃▃▃▃▂▃▃▂▃▂▃ ▄\n  2.56 ms         Histogram: frequency by time        3.68 ms &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.\n\n\n\n\n\nMultiplicación - Strassen\n\nn=128\nb = @benchmarkable strassen(A, B) setup=(A=rand(1:100, $n, $n); B=rand(1:100, $n, $n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 5110 samples with 1 evaluation per sample.\n Range (min … max):  653.699 μs …   3.313 ms  ┊ GC (min … max): 0.00% … 72.24%\n Time  (median):     702.138 μs               ┊ GC (median):    0.00%\n Time  (mean ± σ):   815.508 μs ± 271.428 μs  ┊ GC (mean ± σ):  6.75% ± 11.98%\n  █▄▄▅▄▄▃▁▁                      ▁▁                             ▁\n  █████████████▇▇▇▇▇▅▆▇▇▇▆▅▅▅▄▄▆███▇███▇▇▇█▇▇▇▇▇▆▆▆▆▆▅▆▅▆▅▄▅▅▄▅ █\n  654 μs        Histogram: log(frequency) by time       1.77 ms &lt;\n Memory estimate: 1.13 MiB, allocs estimate: 101.\n\n\n\n\n\n\nEliminaciones\n\nEliminación Gaussiana\n\nusing LinearAlgebra\n\nn=100\nA = rand(Float64, n, n)\nwhile det(A) == 0\n    A = rand(Float64, n, n)\nend\nb = rand(Float64, n)\n\n# x = gaussiana(A, b)\n# x2 = A \\ b\n# println(\"Factor de Error: \", norm(A * x - b))\n# println(\"Factor de Error: \", norm(A * x2 - b))\n# print(norm(A * x - b)-norm(A * x2 - b))\nb = @benchmarkable gaussiana($A, b) setup=(b = rand(Float64, $n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 1193 samples with 1 evaluation per sample.\n Range (min … max):  3.900 ms …   5.633 ms  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     4.088 ms               ┊ GC (median):    0.00%\n Time  (mean ± σ):   4.188 ms ± 291.297 μs  ┊ GC (mean ± σ):  0.00% ± 0.00%\n  ▅ █▆▅█▂▁       ▁                                             \n  █████████▇▅▆▆███▇▆▅▅▄▆▄▄▄▃▃▃▃▃▂▃▂▃▂▂▂▂▃▂▁▁▂▃▃▂▂▂▃▂▂▃▃▂▂▁▂▃▃ ▄\n  3.9 ms          Histogram: frequency by time        5.28 ms &lt;\n Memory estimate: 928 bytes, allocs estimate: 2.\n\n\n\n\n\nELiminación Gauss-Jordan\n\nA = rand(Float64, n, n)\nwhile det(A) == 0\n    A = rand(Float64, n, n)\nend\n\n# x = gauss_jordan(A, b,n)\n# x2 = A \\ b\n# println(\"Factor de error: \", norm(A * x - b))\n# println(\"Factor de error: \", norm(A * x2 - b))\n\nb = @benchmarkable gauss_jordan($A, B) setup=(B = rand(Float64, $n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 928 samples with 1 evaluation per sample.\n Range (min … max):  4.220 ms … 54.857 ms  ┊ GC (min … max):  0.00% … 90.63%\n Time  (median):     4.636 ms              ┊ GC (median):    12.97%\n Time  (mean ± σ):   5.381 ms ±  3.766 ms  ┊ GC (mean ± σ):  15.59% ±  5.97%\n  ▇█▆▃▁                                                       \n  ███████▅▅▅▁▄▁▁▄▁▁▄▁▁▁▁▁▁▁▁▁▁▄▁▁▄▁▁▁▁▁▁▁▁▁▄▁▁▁▁▄▁▁▁▁▄▁▅▆▅▄▅ ▇\n  4.22 ms      Histogram: log(frequency) by time     23.6 ms &lt;\n Memory estimate: 35.30 MiB, allocs estimate: 79605.",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica2.html#n-300",
+    "href": "Practica2.html#n-300",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "N = 300",
+    "text": "N = 300\n\nn=300\n\n300\n\n\n\nMultiplicaciones\n\nMultiplicación Simple\n\nb = @benchmarkable multiplicarMatrizCuadrada(A, B, C, $n) setup=(A=rand(1:100, $n, $n); B=rand(1:100, $n, $n); C=zeros($n,$n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 63 samples with 1 evaluation per sample.\n Range (min … max):  76.488 ms … 85.424 ms  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     78.010 ms              ┊ GC (median):    0.00%\n Time  (mean ± σ):   78.862 ms ±  2.203 ms  ┊ GC (mean ± σ):  0.00% ± 0.00%\n      █▂   ▂                                                   \n  █▆▆▆████▄███▁▄▄▆▆▁▁▄▆▄▁▁▁▄▁▄▄▄▄▁▁█▁▁▁▄▁▄▄▁▁▆▁▁▁▄▁▁▁▁▁▁▁▁▁▁▄ ▁\n  76.5 ms         Histogram: frequency by time        85.2 ms &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.\n\n\n\n\n\nMultiplicación - Strassen\n\nn=512\nb = @benchmarkable strassen(A, B) setup=(A=rand(1:100, $n, $n); B=rand(1:100, $n, $n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 72 samples with 1 evaluation per sample.\n Range (min … max):  40.152 ms … 185.792 ms  ┊ GC (min … max):  2.36% … 67.21%\n Time  (median):     47.352 ms               ┊ GC (median):     2.63%\n Time  (mean ± σ):   66.107 ms ±  44.573 ms  ┊ GC (mean ± σ):  31.27% ± 25.59%\n  █▂                                                            \n  ████▅▄▄▄▄▁▁▃▄▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▁▁▁▁▁▆▃▁▃▃▁▁▃ ▁\n  40.2 ms         Histogram: frequency by time          182 ms &lt;\n Memory estimate: 95.14 MiB, allocs estimate: 5589.\n\n\n\n\n\n\nEliminaciones\n\nEliminación Gaussiana\n\nn=300\nA = rand(Float64, n, n)\nwhile det(A) == 0\n    A = rand(Float64, n, n)\nend\n\nb = @benchmarkable gaussiana($A, B) setup=(B = rand(Float64, $n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 20 samples with 1 evaluation per sample.\n Range (min … max):  247.601 ms … 279.131 ms  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     253.197 ms               ┊ GC (median):    0.00%\n Time  (mean ± σ):   255.660 ms ±   8.987 ms  ┊ GC (mean ± σ):  0.00% ± 0.00%\n  █▃▃       ▃                                                    \n  ███▁▁▁▇▁▇▁█▇▁▇▁▁▁▇▁▁▁▇▁▁▇▁▁▁▁▇▁▇▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇▁▁▁▁▁▇ ▁\n  248 ms           Histogram: frequency by time          279 ms &lt;\n Memory estimate: 2.44 KiB, allocs estimate: 3.\n\n\n\n\n\nELiminación Gauss-Jordan\n\nA = rand(Float64, n, n)\nwhile det(A) == 0\n    A = rand(Float64, n, n)\nend\n\nb = @benchmarkable gauss_jordan($A, B) setup=(B = rand(Float64, $n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 13 samples with 1 evaluation per sample.\n Range (min … max):  350.985 ms … 530.231 ms  ┊ GC (min … max): 27.80% … 17.52%\n Time  (median):     360.742 ms               ┊ GC (median):    27.89%\n Time  (mean ± σ):   385.925 ms ±  50.920 ms  ┊ GC (mean ± σ):  27.21% ±  3.10%\n   █ ▃                     ▃                                     \n  ▇█▇█▇▁▇▁▁▁▁▁▁▁▁▁▁▇▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇ ▁\n  351 ms           Histogram: frequency by time          530 ms &lt;\n Memory estimate: 856.20 MiB, allocs estimate: 1078206.\n\n\n\n\n# size(A,1)",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica2.html#n-1000",
+    "href": "Practica2.html#n-1000",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "N = 1000",
+    "text": "N = 1000\n\nMultiplicaciones\n\nMultiplicación Simple\n\nn = 1000\nb = @benchmarkable multiplicarMatrizCuadrada(A, B, C, $n) setup=(A=rand(1:100, $n, $n); B=rand(1:100, $n, $n); C=zeros($n,$n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 2 samples with 1 evaluation per sample.\n Range (min … max):  3.452 s …  3.455 s  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     3.453 s             ┊ GC (median):    0.00%\n Time  (mean ± σ):   3.453 s ± 1.903 ms  ┊ GC (mean ± σ):  0.00% ± 0.00%\n  █                                                      █  \n  █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█ ▁\n  3.45 s        Histogram: frequency by time        3.45 s &lt;\n Memory estimate: 0 bytes, allocs estimate: 0.\n\n\n\n\n\nMultiplicación - Strassen\n\nn=1024\nb = @benchmarkable strassen(A, B) setup=(A=rand(1:100, $n, $n); B=rand(1:100, $n, $n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 13 samples with 1 evaluation per sample.\n Range (min … max):  309.369 ms … 563.416 ms  ┊ GC (min … max):  2.55% …  1.03%\n Time  (median):     339.075 ms               ┊ GC (median):     3.45%\n Time  (mean ± σ):   400.824 ms ±  88.966 ms  ┊ GC (mean ± σ):  15.11% ± 13.98%\n  █  ▁▁▁▁▁                         ▁▁   ▁    ▁ ▁              ▁  \n  █▁▁█████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██▁▁▁█▁▁▁▁█▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁█ ▁\n  309 ms           Histogram: frequency by time          563 ms &lt;\n Memory estimate: 724.00 MiB, allocs estimate: 39203.\n\n\n\n\n\n\nEliminaciones\n\nEliminación Gaussiana\n\nn=1000\nA = rand(Float64, n, n)\nwhile det(A) == 0\n    A = rand(Float64, n, n)\nend\n\nb = @benchmarkable gaussiana($A, B) setup=(B = rand(Float64, $n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 5 samples with 1 evaluation per sample.\n Range (min … max):  1.131 s …   1.222 s  ┊ GC (min … max): 0.00% … 0.00%\n Time  (median):     1.175 s              ┊ GC (median):    0.00%\n Time  (mean ± σ):   1.180 s ± 36.526 ms  ┊ GC (mean ± σ):  0.00% ± 0.00%\n  █                   █      █                     █      █  \n  █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁█ ▁\n  1.13 s         Histogram: frequency by time        1.22 s &lt;\n Memory estimate: 7.88 KiB, allocs estimate: 3.\n\n\n\n\n\nELiminación Gauss-Jordan\n\nA = rand(Float64, n, n)\nwhile det(A) == 0\n    A = rand(Float64, n, n)\nend\n\nb = @benchmarkable gauss_jordan($A, B) setup=(B = rand(Float64, $n))\ntune!(b)\nrun(b)\n\n\nBenchmarkTools.Trial: 1 sample with 1 evaluation per sample.\n Single result which took 13.019 s (10.35% GC) to evaluate,\n with a memory estimate of 30.27 GiB, over 11994006 allocations.",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica2.html#tabla-de-desempeños",
+    "href": "Practica2.html#tabla-de-desempeños",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "Tabla de desempeños",
+    "text": "Tabla de desempeños\nSe muestran a continuación los tiempos medidos para cada algoritmo de acuerdo al valor median que arroja benchamark, ya que en su documentación menciona que es menos proponeso a dar valores atípicos³.\n\n\n\nAlgoritmo\nn=100\nn=300\nn=1000\n\n\n\n\nMultiplicación Simple\n2.875 ms\n78.010 ms\n3.453 s\n\n\nElimnación Gaussiana\n4.088 ms\n253.197 ms\n1.175 s\n\n\nEliminación Gauss-Jordan\n4.636 ms\n360.742 ms\n13.019 s\n\n\n\n\n\n\nAlgoritmo\nn=128\nn=512\nn=1024\n\n\n\n\nStrassen\n702.138 μs\n47.352 ms\n339.075 ms",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica2.html#multiplicación-de-matrices-naive",
+    "href": "Practica2.html#multiplicación-de-matrices-naive",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "Multiplicación de matrices (Naive)",
+    "text": "Multiplicación de matrices (Naive)\nSe tiene que el número de multiplicaciones para cada elemento de la matriz C se obtiene como \\(n^2\\times n\\) ya que en los loops mas internos son para recorrer las matrices A y B y el for externo es para recorrer todos los elementos de C.\nAhora para el caso de las sumas se tiene que se son \\(n-1\\) ya que se suman todos los elementos con todos menos excepto para la primer posición que sería sumar una posición consigo mismo. Y considerando que se hace para cada posición de C se tiene que \\(n^2(n-1)\\)\nTenemos entonces que el total de operaciones aritméticas está dado por\n\\[T(n) = n^3 + n^2(n-1)\\] \\[T(n) = 2n^3 + n^2  \\]",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica2.html#strassen",
+    "href": "Practica2.html#strassen",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "Strassen",
+    "text": "Strassen\nPara este método se tiene que el algoritmo divide las matrices quedando en submatrices de tamaños de \\(\\frac{n}{2}\\), luego hace 7 operaciones recursivas quedando como \\(7T(\\frac{n}{2})\\) y realiza un total de 18 operaciones entre sumas y restas para submatriz.\nPor lo que se puede expresar la siguiente relación de recurrencia\n\\[ T(n) = 7T(\\frac{n}{2}) + 18(\\frac{n}{2})^2\\]\nEn la que el término de \\(18(\\frac{n}{2})^2\\) hace referencia al tamaño total de la submatriz.\nEs importante aclarar que el algoritmo al encontrar tamaños de \\(n \\leq 64\\) hace una multiplicación estándar, por lo que para el caso de \\(n=100\\) el número total de operaciones aritméticas está dado por el siguiente desarrollo\n\\[T(100) = 7T(50) + 18(50)^2\\]\n\\[T(50) = 7T(25) + 18(25)^2\\]\n\\[T(25) = 2(25)^3 - 25^2\\]",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica2.html#eliminación-gaussiana-4",
+    "href": "Practica2.html#eliminación-gaussiana-4",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "Eliminación Gaussiana",
+    "text": "Eliminación Gaussiana\nAnalizamos para cada linea de codigo el total de operaciones aritmeticas\n\nfactor = A[i,k] / A[k,k]\nSe contabiliza de forma que tiende a \\((n-1)+(n-2)+\\dots+1 = \\frac{n(n-1)}{2}\\)\nA[i,j] = A[i,j] - factor * A[k,j]\nSe puede expresar como \\[\\sum_{k=1}^{n-1}(n-k)(n-k+1)\\] \\[\\sum_{k=1}^{n-1}(n^2 -2nk +n -k^2 -k)\\]\nSi desarrollamos cada término de acuerdo a su serie de convergencia tenemos lo siguientes\n\\[(n^3 -n^2) -(n^3 - n^2) +(n^2 - n)-(\\frac{2n^3 -3n^2+n}{6})-(\\frac{n^2-n}{2}) = \\]\nSimplificando tenemos que\n\\[\\frac{n^2-n}{2} - \\frac{n^3}{3} +\\frac{n^2}{2} - \\frac{n}{6} = \\] \\[-\\frac{n^3}{3} - \\frac{2n}{3} \\]\nPor lo que para una \\(n\\) muy grande se reduce únicamente al término de mayor grado \\[ \\frac{n^3}{3}\\]\nb[i] = b[i] - factor * b[k]\nSe ejecuta \\((n-1)+(n-2)+\\dots+1 = \\frac{n(n-1)}{2}\\)\nx[n] = b[n] / A[n, n]\nSe ejecuta \\(n\\)\nsum = sum - A[i, j] * x[j]\nSe ejecuta \\[\\sum_{i=1}^{n-1}(n-i)=\\frac{n(n-1)}{2}\\]\nSumando todos los términos anteriores tenemos\n\\[ \\frac{n(n-1)}{2} + \\frac{n^3}{3}+ \\frac{n(n-1)}{2} + n \\frac{n(n-1)}{2} = \\] \\[ \\frac{n^3}{3}+ \\frac{3(n^2-n)}{2} - \\frac{3n}{2}+ n = \\] \\[ \\frac{n^3}{3}+ \\frac{3n^2}{2} + \\frac{n}{2}\\]\nSiendo que para una \\(n\\) muy grande el total de operaciones se tomen en cuenta de acuerdo al término de mayor orden quedando como \\[ T(n) = \\frac{n^3}{3} + \\frac{3n^2}{2} + \\frac{n}{2}\\]",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica2.html#eliminación-gauss-jordan-4",
+    "href": "Practica2.html#eliminación-gauss-jordan-4",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "Eliminación Gauss-Jordan",
+    "text": "Eliminación Gauss-Jordan\nCalculamos para cada linea de código - A[i, :] = A[i, :] / pivot y b[i] = b[i] / pivot Se tienen \\(n+1\\) divisiones por cada fila por lo que se tiene un total de \\[n(n+1)\\]\n\nA[j, :] = A[j, :] - factor * A[i, :]\nSe puede expresar como\n\\[ n(n-1)n = n^3 - n^2\\]\nb[j] = b[j] - factor * b[i]\nSe puede expresar como\n\\[ n(n-1) = n^2 - n\\]\n\nSumando todos los terminos tenemos que el total de operaciones es\n\\[T(n) = (n^2 +n) +(n^3 - n^2) + (n^2 -n)\\] \\[T(n) = n^3 + n^2\\]",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica2.html#expresiones-de-conteo-de-operaciones",
+    "href": "Practica2.html#expresiones-de-conteo-de-operaciones",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "Expresiones de conteo de operaciones",
+    "text": "Expresiones de conteo de operaciones\nSe tienen entonces las siguientes expresiones para calcular el total de operaciones para cada algoritmo\n\nMultiplicación Naive \\[T(n) = 2n^3 + n^2 \\]\nStrassen \\[T(n) = 7T(\\frac{n}{2}) + 18(\\frac{n}{2})^2\\]\nEliminación Gaussiana \\[T(n) = \\frac{n^3}{3} + \\frac{3n^2}{2} + \\frac{n}{2}\\]\nEliminación Gauss-Jordan \\[T(n) = n^3 + n^2\\]",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica2.html#operaciones-calculadas",
+    "href": "Practica2.html#operaciones-calculadas",
+    "title": "Experimentos y análisis de estructuras de datos",
+    "section": "Operaciones calculadas",
+    "text": "Operaciones calculadas\nEn la siguiente tabla se muestran el número de operaciones para cada algoritmo dependiendo el tamaño de \\(n\\), de acuerdo a las expresiones obtenidas anteriormente\n\n\n\nAlgoritmo\nn=100\nn=300\nn=1000\n\n\n\n\nMultiplicación Simple\n2010000\n54090000\n2001000000\n\n\nElimnación Gaussiana\n348383.33\n9135150\n1001500500\n\n\nEliminación Gauss-Jordan\n1010000\n27090000\n1001000000\n\n\n\n\n\n\nAlgoritmo\nn=128\nn=512\nn=1024\n\n\n\n\nStrassen\n1880064\n95367168\n672288768",
+    "crumbs": [
+      "Práctica 2"
+    ]
+  },
+  {
+    "objectID": "Practica3.html",
+    "href": "Practica3.html",
+    "title": "Experimentos y análisis de algoritmos de ordenamiento",
+    "section": "",
+    "text": "La implementación de difetentes algoritmos de desempeño es importante para conocer qué algoritmo es mejor ordenando, para ello además de realizar mediciones de tiempo real, es decir, mediciones que incluyan el tiempo que tardan en ejecutarse se miden el número de comparaciones que realizan para hacer comparaciones. Se presentan las implementaciones de algoritmos de HeapSort, MergeSort, QuickSort, BubbleSort y Skiplists, de los cuales veremos que los que tienen mejor desempeño (tardan menos tiempo) ordenando son los de heapsort, mergesort y skiplists. Las medidas de desempeño realizadas no fueron las más prácticas ya que demoraron un tiempo bastante amplio, eso debido al número de muestras tomadas para cada algoritmo, las cuales se tomaron de acuerdo a los resultados de arrojados por la función tun() de benchmarkTools.\nLa comparación de desempeño de cada algoritmo se hará mediante los datos almacenados en 6 archivos, los cuales tienen diferentes niveles de perturbación, es decir, en cada archivo hay diferentes niveles de desorden lo cual se verá reflejado en los resultados.\nPara poder realizar las implementaciones de los primeros cuatro algoritmos mencionados me apoyé en los pseudocódigos del libro de “Introducción a los Algoritmos”¹, mientras que para realizar la implementación de SkipLists revisé directamente el artículo del mismo². Un aspecto importante durante la implementación de algunos de estos algoritmos es el uso de estructuras, las cuales permiten respetar características importantes como en el caso de heapsort. Para todos los algoritmos antes de someterlos a mediciones de desempeño se evaluaron con arreglos pequeños para asegurar que estaban ordenando los arreglos de forma correcta.\nHay que resaltar que las líneas de código comentadas en las implementaciones tienen que ver con las que son usadas para realizar el conteo de comparaciones así como las pruebas individuales para corroborar que el algoritmo ordena adecuadamente.\nPara la generación de gráficos se usan dataframes y todo el código mostrado está en Julia.\nSe divide en las siguientes secciones el reporte - Implementaciones. Se muestran las implementaciones para cada algoritmo junto con la carga de datos de los archivos - Medición de tiempo real. Se muestra cómo se hacen las mediciones de tiempo real para cada algoritmo y se almacenan resultados - Medición de comparaciones. Se muestra cómo se hacen las mediciones de comparaciones para cada algoritmo y se guardan resultados - Procesamiento de datos. Se acomodan los resultados de forma conveniente para poder graficarlos - Resultados. Se muestran las gráficas de desempeño, primero las de tiempo real y luego las de de comparaciones. - Conclusiones. - Referencias.",
+    "crumbs": [
+      "Práctica 3"
+    ]
+  },
+  {
+    "objectID": "Practica3.html#heapsort",
+    "href": "Practica3.html#heapsort",
+    "title": "Experimentos y análisis de algoritmos de ordenamiento",
+    "section": "Heapsort",
+    "text": "Heapsort\nSe utiliza el pseudocódigo encontrado en el libro de Cormen¹.\nEs importante destacar que la implementación de la estructura Heap, permite guardar atributos importantes de tamaño de heap (heap_size) así como tamaño de arreglo. Es importante definirla como mutable ya que a lo largo del algoritmo se cambian los valores del Heap y solo con esa definición permite cambiar los valores. Algo importante a resaltar es que esta estructura Heap tiene la característica de ser un árbol binario.\n\nmutable struct Heap\n    array::Vector{Int}  \n    heap_size::Int      \n    length::Int         \nend\n\nleft(i) = 2 * i\nright(i) = 2 * i + 1\n\n# function max_heapify!(A::Heap, i, contar::Ref{Int})\nfunction max_heapify!(A::Heap, i)\n    l = left(i)\n    r = right(i)\n    largest = i\n\n    if l &lt;= A.heap_size && A.array[l] &gt; A.array[i]\n        # contar[] += 1 \n        largest = l\n    end\n\n    if r &lt;= A.heap_size && A.array[r] &gt; A.array[largest]\n        # contar[] += 1\n        largest = r\n    end\n\n    if largest != i\n        A.array[i], A.array[largest] = A.array[largest], A.array[i]  \n        # max_heapify!(A, largest, contar)  \n        max_heapify!(A, largest)  \n    end\nend\n\n# function build_max_heap!(A::Heap, contar::Ref{Int})\nfunction build_max_heap!(A::Heap)\n    A.heap_size = A.length\n    for i in A.length ÷ 2:-1:1\n        # max_heapify!(A, i, contar)\n        max_heapify!(A, i)\n    end\nend\n\nfunction heapsort!(arreglo::Vector{Int})\n    # contar = Ref(0)\n    A = Heap(arreglo, length(arreglo), length(arreglo))  \n    # build_max_heap!(A, contar) \n    build_max_heap!(A) \n\n    for i in A.length:-1:2\n        A.array[1], A.array[i] = A.array[i], A.array[1]  \n        A.heap_size -= 1  \n        # max_heapify!(A, 1, contar)  \n        max_heapify!(A, 1)  \n    end\n    # return contar[]\nend\n\n# a = [23, 17, 14, 6, 13, 10, 1, 5, 7, 12]\n# heapsort!(a)\n# comparaciones = heapsort!(a)\n# println(\"Comparaciones: \", comparaciones)\n# println(a)\n\nheapsort! (generic function with 1 method)",
+    "crumbs": [
+      "Práctica 3"
+    ]
+  },
+  {
+    "objectID": "Practica3.html#mergesort",
+    "href": "Practica3.html#mergesort",
+    "title": "Experimentos y análisis de algoritmos de ordenamiento",
+    "section": "Mergesort",
+    "text": "Mergesort\nSe utiliza el pseudocódigo encontrado en el libro de Cormen¹\n\n# function merge!(A,p,q,r, contar)\nfunction merge!(A,p,q,r)\n    n1 = q-p+1\n    n2 = r-q\n    L=zeros(n1+1)\n    R=zeros(n2+1)\n    for i in 1:n1\n        L[i]=A[p+i-1]\n    end\n    for j in 1:n2\n        R[j] = A[q+j]\n    end\n    L[n1+1]= Inf\n    R[n2+1]= Inf\n    \n    i=1\n    j=1\n    for k in p:r\n        # contar[1] += 1\n        if L[i] &lt;= R[j]\n            A[k] = L[i]\n            i=i+1\n        else \n            A[k] = R[j]\n            j=j+1\n        end\n    end    \nend    \n\n# function mergeSort!(A,p,r, contar)\nfunction mergeSort!(A,p,r)\n    if p &lt; r\n        q = div(p+r,2)\n        # mergeSort!(A,p,q, contar)\n        # mergeSort!(A,q+1,r, contar)\n        # merge!(A,p,q,r, contar)\n        mergeSort!(A,p,q)\n        mergeSort!(A,q+1,r)\n        merge!(A,p,q,r)\n    end    \n    # return contar\nend     \n# A=[5, 2, 4,7,1,3,2,6]\n# contar = [0]\n# mergeSort!(A, 1, length(A), contar)\n# mergeSort!(A, 1, length(A))\n# println(\"Comparaciones: \", contar[])\n# println(A)\n\nmergeSort! (generic function with 2 methods)",
+    "crumbs": [
+      "Práctica 3"
+    ]
+  },
+  {
+    "objectID": "Practica3.html#quicksort",
+    "href": "Practica3.html#quicksort",
+    "title": "Experimentos y análisis de algoritmos de ordenamiento",
+    "section": "Quicksort",
+    "text": "Quicksort\nSe utiliza el pseudocódigo encontrado en el libro de Cormen¹\n\nfunction quicksort!(A, p, r)\n    # contar = 0\n    if p &lt; r\n        # q, cont_cacho = partition!(A, p, r)\n        # contar += cont_cacho\n        # contar += quicksort!(A, p, q - 1)\n        # contar += quicksort!(A, q + 1, r)\n        q = partition!(A, p, r)\n        quicksort!(A, p, q - 1)\n        quicksort!(A, q + 1, r)\n    end\n    # return contar\nend\n\nfunction partition!(A, p, r)\n    x = A[r]\n    i = p - 1\n    # contar = 0\n    for j in p:r-1\n        # contar += 1\n        if A[j] &lt;= x\n            i += 1\n            A[i], A[j] = A[j], A[i]  \n        end\n    end\n    A[i + 1], A[r] = A[r], A[i + 1]  \n    return i + 1\n    # return i + 1, contar\nend\n\n# A = [3, 6, 8, 10, 1, 2, 1]\n# quicksort!(A, 1, length(A))\n# comparaciones = quicksort!(A, 1, length(A))\n# println(\"Comparaciones: \", comparaciones)\n# println(A)\n\npartition! (generic function with 1 method)",
+    "crumbs": [
+      "Práctica 3"
+    ]
+  },
+  {
+    "objectID": "Practica3.html#bubblesort",
+    "href": "Practica3.html#bubblesort",
+    "title": "Experimentos y análisis de algoritmos de ordenamiento",
+    "section": "Bubblesort",
+    "text": "Bubblesort\nSe utiliza el pseudocódigo encontrado en el libro de Cormen¹\n\nfunction bubbleSort!(A,n)\n    # contar = 0\n    for i in 1:(n -1)\n        for j in 1:n-i\n            # contar += 1\n            if A[j] &gt; A[j+1]\n                A[j], A[j+1] = A[j+1], A[j]\n            end\n        end\n    end\n    # return contar\nend\n# A = [3, 6, 8, 10, 1, 2, 1]\n# bubbleSort!(A, length(A))\n# comparaciones = bubbleSort!(A, length(A))\n# println(\"Comparaciones: \", comparaciones)\n# println(A)\n\nbubbleSort! (generic function with 1 method)",
+    "crumbs": [
+      "Práctica 3"
+    ]
+  },
+  {
+    "objectID": "Practica3.html#skiplist-sorting",
+    "href": "Practica3.html#skiplist-sorting",
+    "title": "Experimentos y análisis de algoritmos de ordenamiento",
+    "section": "Skiplist (Sorting)",
+    "text": "Skiplist (Sorting)\nSe utiliza el pseudocódigo encontrado en el paper de este algoritmo². También fue necesario definir una estructura para Nodo, que es la que almacena atributos de llave, valor, el nodo siguiente, asi como una función que apunta a Nada en caso de ser el útltimo. La estructura SkipList es la principal del algoritmo ya que en ella se define el nivel del nodo así como los encabezados de la lista.\nDado que esta lista es de tipo probabilístico requiere de un parámetro \\(p\\), y un nivel máximo de niveles para nodos, se usan los valores que proporciona el paper ya que menciona que empezar la búsqueda en el máximo nivel no agrega más que una constante de tiempo²\n\nusing Random\n\nconst MaxLevel = 16\nconst p = 0.5\n\nmutable struct Node\n    key::Int\n    value::Any\n    forward::Vector{Union{Node, Nothing}}\n    \n    function Node(level::Int, key::Int, value::Any)\n        new(key, value, Vector{Union{Node, Nothing}}(nothing, level))\n    end\nend\n\nmutable struct SkipList\n    header::Node\n    level::Int\n    \n    function SkipList()\n        header = Node(MaxLevel, -1, nothing)\n        new(header, 1)\n    end\nend\n\nfunction randomLevel()\n    newLevel = 1\n    while rand() &lt; p && newLevel &lt; MaxLevel\n        newLevel += 1\n    end\n    return newLevel\nend\n\n# function Insert!(list::SkipList, searchKey::Int, newValue::Any, contar::Ref{Int})\nfunction Insert!(list::SkipList, searchKey::Int, newValue::Any)\n    update = Vector{Union{Node, Nothing}}(nothing, MaxLevel)\n    x = list.header\n    \n    for i in list.level:-1:1\n        while x.forward[i] !== nothing && x.forward[i].key &lt; searchKey\n            x = x.forward[i]\n            # contar[] += 1\n        end\n        # contar[] += 1\n        update[i] = x\n    end\n    \n    x = x.forward[1]\n    \n    if x !== nothing && x.key == searchKey\n        x.value = newValue\n    else\n        newLevel = randomLevel()\n        \n        if newLevel &gt; list.level\n            for i in (list.level + 1):newLevel\n                update[i] = list.header\n            end\n            list.level = newLevel\n        end\n        \n        x = Node(newLevel, searchKey, newValue)\n        \n        for i in 1:newLevel\n            x.forward[i] = update[i].forward[i]\n            update[i].forward[i] = x\n        end\n    end\n    # contar[] += 1\n\nend\n\nfunction sortArray!(arr::Vector{Int})\n    list = SkipList()\n    # contar = Ref(0)\n\n    for element in arr\n        # Insert!(list, element, element, contar)\n        Insert!(list, element, element)\n    end\n    \n    x = list.header.forward[1]\n    i = 1\n    \n    while x !== nothing\n        # contar[] += 1\n        arr[i] = x.key\n        x = x.forward[1]\n        i += 1\n    end\n    return arr\n    # return arr, contar[]\nend\n\n# arr = [9, 3, 7, 5, 6, 4, 8, 2]\n# sortArray!(arr)\n# arr, comparaciones = sortArray!(arr)\n# println(\"Comparaciones: \", comparaciones)\n# println(arr)\n\nsortArray! (generic function with 1 method)",
+    "crumbs": [
+      "Práctica 3"
+    ]
+  },
+  {
+    "objectID": "Practica3.html#carga-de-archivos",
+    "href": "Practica3.html#carga-de-archivos",
+    "title": "Experimentos y análisis de algoritmos de ordenamiento",
+    "section": "Carga de archivos",
+    "text": "Carga de archivos\nSe hace uso del paquete de JSON para cargar el contenido de los archivos y se almacena en un arreglo archivos. De forma que cada posición del arreglo de archivos corresponde a un único archivo.\n\nusing JSON\narchivos = []\npush!(archivos,JSON.parsefile(\"listas-posteo-con-perturbaciones-p=016.json\"))\npush!(archivos,JSON.parsefile(\"listas-posteo-con-perturbaciones-p=032.json\"))\npush!(archivos,JSON.parsefile(\"listas-posteo-con-perturbaciones-p=064.json\"))\npush!(archivos,JSON.parsefile(\"listas-posteo-con-perturbaciones-p=128.json\"))\npush!(archivos,JSON.parsefile(\"listas-posteo-con-perturbaciones-p=256.json\"))\npush!(archivos,JSON.parsefile(\"listas-posteo-con-perturbaciones-p=512.json\"))\nprintln(\"Archivos cargados\")\n\nArchivos cargados\n\n\nSe observa que cada archivo tiene una estructura de diccionario con 100 llaves asociadas para cada uno y una lista por llave.\n\nprintln(typeof(archivos[1]))\nprintln(length(archivos[1]))\nprintln(typeof(archivos[1][\"reunion\"]))        \n\nDict{String, Any}\n100\nVector{Any}",
+    "crumbs": [
+      "Práctica 3"
+    ]
+  },
+  {
+    "objectID": "Practica4.html",
+    "href": "Practica4.html",
+    "title": "Algoritmos de búsqueda por comparación",
+    "section": "",
+    "text": "Proximamente",
+    "crumbs": [
+      "Práctica 4"
+    ]
+  }
+]
