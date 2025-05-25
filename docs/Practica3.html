@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.31">
@@ -92,17 +92,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
@@ -307,13 +307,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Practica3.html">Práctica 3</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -327,13 +327,13 @@ window.Quarto = {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Análisis de algoritmos</a> 
         <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
 </div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -342,6 +342,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bienvenido</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/aldihero/datascience_foundations" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repo</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -423,7 +429,7 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
     <div class="quarto-title-meta-contents">
              <p>Alma Herrera </p>
           </div>
@@ -514,7 +520,7 @@ window.Quarto = {
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="co"># heapsort!(a)</span></span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="co"># comparaciones = heapsort!(a)</span></span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="co"># println("Comparaciones: ", comparaciones)</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="co"># println(a)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="co"># println(a)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="514">
 <pre><code>heapsort! (generic function with 1 method)</code></pre>
 </div>
@@ -571,7 +577,7 @@ window.Quarto = {
 <span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="co"># mergeSort!(A, 1, length(A), contar)</span></span>
 <span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="co"># mergeSort!(A, 1, length(A))</span></span>
 <span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co"># println("Comparaciones: ", contar[])</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="co"># println(A)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="co"># println(A)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="515">
 <pre><code>mergeSort! (generic function with 2 methods)</code></pre>
 </div>
@@ -615,7 +621,7 @@ window.Quarto = {
 <span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="co"># quicksort!(A, 1, length(A))</span></span>
 <span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="co"># comparaciones = quicksort!(A, 1, length(A))</span></span>
 <span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="co"># println("Comparaciones: ", comparaciones)</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="co"># println(A)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="co"># println(A)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="516">
 <pre><code>partition! (generic function with 1 method)</code></pre>
 </div>
@@ -641,7 +647,7 @@ window.Quarto = {
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># bubbleSort!(A, length(A))</span></span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># comparaciones = bubbleSort!(A, length(A))</span></span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># println("Comparaciones: ", comparaciones)</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># println(A)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># println(A)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="517">
 <pre><code>bubbleSort! (generic function with 1 method)</code></pre>
 </div>
@@ -750,7 +756,7 @@ window.Quarto = {
 <span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="co"># sortArray!(arr)</span></span>
 <span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a><span class="co"># arr, comparaciones = sortArray!(arr)</span></span>
 <span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a><span class="co"># println("Comparaciones: ", comparaciones)</span></span>
-<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a><span class="co"># println(arr)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a><span class="co"># println(arr)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="518">
 <pre><code>sortArray! (generic function with 1 method)</code></pre>
 </div>
@@ -768,7 +774,7 @@ window.Quarto = {
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">push!</span>(archivos,JSON.<span class="fu">parsefile</span>(<span class="st">"listas-posteo-con-perturbaciones-p=128.json"</span>))</span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">push!</span>(archivos,JSON.<span class="fu">parsefile</span>(<span class="st">"listas-posteo-con-perturbaciones-p=256.json"</span>))</span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">push!</span>(archivos,JSON.<span class="fu">parsefile</span>(<span class="st">"listas-posteo-con-perturbaciones-p=512.json"</span>))</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Archivos cargados"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Archivos cargados"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Archivos cargados</code></pre>
 </div>
@@ -777,7 +783,7 @@ window.Quarto = {
 <div id="15d2946f-fb3b-42ab-9266-e97892180b5e" class="cell" data-execution_count="462">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="fu">typeof</span>(archivos[<span class="fl">1</span>]))</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="fu">length</span>(archivos[<span class="fl">1</span>]))</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="fu">typeof</span>(archivos[<span class="fl">1</span>][<span class="st">"reunion"</span>]))        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="fu">typeof</span>(archivos[<span class="fl">1</span>][<span class="st">"reunion"</span>]))        </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Dict{String, Any}
 100
@@ -793,7 +799,7 @@ Vector{Any}</code></pre>
 <p>Se encontró que para la llave “jovenes” los parámetros óptimos son <code>samples=10000</code> y <code>eval=1</code> para todos los algoritmos, mientras que para la llave “_url” quedaron de la siguiente forma - <em>heapsort 1116 samples with 1 evaluation per sample</em> - <em>mergesort 762 samples with 1 evaluation per sample</em> - <em>quicksort 4 samples with 1 evaluation per sample</em> - <em>bubblesort 7 samples with 1 evaluation per sample</em> - <em>skiplist 399 samples with 1 evaluation per sample</em></p>
 <p>Por ello se decide usar parámetros de benchmarks de <code>samples=10000</code> y <code>eval=1</code> para listas que tengan tamaños menores a 5000 elementos y los anteriores parámetros si superan ese tamaño de elementos.</p>
 <div id="84735738-1f78-431b-b542-04b550adb645" class="cell" data-execution_count="102">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">BenchmarkTools</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">BenchmarkTools</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>En el siguiente bloque de código se obtienen los benchmarks para todas las listas de todos los archivos y se almacenan las mediciones en un Diccionario de Benchmarks <code>f_trials</code> para procesarlo más adelante.</p>
 <p><code>f_trials</code> almacena los datos de la siguiente forma</p>
@@ -832,7 +838,7 @@ Vector{Any}</code></pre>
 <span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>        f_trials[i][k] <span class="op">=</span> trials</span>
 <span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span> </span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="medición-de-comparaciones" class="level1">
@@ -866,7 +872,7 @@ Vector{Any}</code></pre>
 <span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>        ord_A, comparaciones[<span class="fl">5</span>] <span class="op">=</span> <span class="fu">sortArray!</span>(<span class="fu">copy</span>(A))</span>
 <span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>        f_comparaciones[i][k] <span class="op">=</span> comparaciones</span>
 <span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span>     </span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="procesamiento-de-datos" class="level1">
@@ -874,7 +880,7 @@ Vector{Any}</code></pre>
 <p>Para poder mostrar en gráficas las medidas hechas por archivo, se decide procesar los diccionarios obtenidos de forma que queden almacenados en diccionarios de <code>DataFrames</code>, se hacen dos, uno para las mediciones de tiempo real de todos los archivos y otro para las mediciones de comparaciones, para ello hacemos uso del paquete <code>DataFrames</code>.</p>
 <p>Cada dataframe tendrá las columnas de <em>Llave, Tamaño, heap, merge, qsort, bubble, skip</em> y cada fila será la información asociada a cada lista en un archivo.</p>
 <div id="1eebf161-17f2-4b4f-a3fc-3385fa14944d" class="cell" data-execution_count="452">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">DataFrames</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>En el siguiente bloque de código se procesa el diccionario <code>f_trials</code>, que es el que contiene los benchmarks. Para generar el dataframe, se decide obtener el valor de la mediana <code>median(v[1].times)</code> de cada benchmark el cual está en nanosegundos.</p>
 <p>El diccionario de dataframes que contiene las medidas finales de tiempo real que serán usadas para graficar los resultados, es <code>b_df</code>.</p>
@@ -900,11 +906,11 @@ Vector{Any}</code></pre>
 <span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>                  t_merge<span class="op">=</span>merge_aux, t_qsort <span class="op">=</span> qsort_aux,</span>
 <span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>                  t_bubble<span class="op">=</span>bubble_aux, t_skip<span class="op">=</span>skip_aux)</span>
 <span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    b_df[i] <span class="op">=</span> df</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A continuación se muestra como quedaron los datos organizados para las <strong>mediciones de tiempo real</strong> del archivo 1, el cual corresponde al “listas-posteo-con-perturbaciones-p=016.json”</p>
 <div id="72144e81-b503-44b7-a138-630771fe1bf9" class="cell" data-execution_count="536">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>b_df[<span class="fl">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>b_df[<span class="fl">1</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="536">
 <div><div style="float: left;"><span>100×7 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">75 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1219,11 +1225,11 @@ Vector{Any}</code></pre>
 <span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>                  c_merge<span class="op">=</span>merge_aux, c_qsort <span class="op">=</span> qsort_aux,</span>
 <span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>                  c_bubble<span class="op">=</span>bubble_aux, c_skip<span class="op">=</span>skip_aux)</span>
 <span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>    c_df[i] <span class="op">=</span> df</span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A continuación se muestra como quedaron los datos organizados para las mediciones de <strong>comparaciones</strong> del archivo 1, el cual corresponde al “listas-posteo-con-perturbaciones-p=016.json”</p>
 <div id="e6a30ed3-ee5d-43c5-a30f-30f3ec513bc8" class="cell" data-execution_count="529">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>c_df[<span class="fl">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>c_df[<span class="fl">1</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="529">
 <div><div style="float: left;"><span>100×7 DataFrame</span></div><div style="float: right;"><span style="font-style: italic;">75 rows omitted</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1520,7 +1526,7 @@ Vector{Any}</code></pre>
 <h1>Resultados</h1>
 <p>Para poder mostrar los resultados obtenidos se grafican las mediciones conforme a cada archivo y se muestran las matrices de gráficas.</p>
 <div id="ebc0b7c8-459d-4608-8812-ff11faf4299c" class="cell" data-execution_count="453">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Las gráficas mostradas a continuación contemplan todos los algoritmos para cada archivo, claramente se puede apreciar que los algoritmos más lentos fueron bubblesort seguido de quicksort. Aunque se aprecian gráficas muy similares se pueden apreciar que los tiempos de ejecución para perturbaciones <span class="math inline">\(p=032\)</span> y <span class="math inline">\(p=064\)</span> son muy similares sino es que iguales, así como para las <span class="math inline">\(p=016\)</span> y <span class="math inline">\(p=128\)</span> y finalmente para <span class="math inline">\(p=256\)</span> y <span class="math inline">\(p=512\)</span></p>
 <div id="029dca15-2bfa-464c-ac30-78d6f0e02cc5" class="cell" data-execution_count="539">
@@ -1539,7 +1545,7 @@ Vector{Any}</code></pre>
 <span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title!</span>(<span class="st">"Archivo </span><span class="sc">$</span>i<span class="st">, </span><span class="sc">$</span>(nombres[i])<span class="st">"</span>, subplot<span class="op">=</span>i)</span>
 <span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
 <span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(<span class="fu">plot!</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(<span class="fu">plot!</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="1000" height="800" viewbox="0 0 4000 3200">
@@ -1813,7 +1819,7 @@ Vector{Any}</code></pre>
 <span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title!</span>(<span class="st">"Archivo </span><span class="sc">$</span>i<span class="st">, </span><span class="sc">$</span>(nombres[i])<span class="st">"</span>, subplot<span class="op">=</span>i)</span>
 <span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
 <span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(<span class="fu">plot!</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(<span class="fu">plot!</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="1000" height="800" viewbox="0 0 4000 3200">
@@ -2041,7 +2047,7 @@ Vector{Any}</code></pre>
 </div>
 <p>Los picos abruptos que se observan en las gráficas es debido a que en ese rango de llaves el tamaño de las listas es grande como se aprecia a continuación.</p>
 <div id="25c94fc5-857b-4fef-85ef-b998aaacfff6" class="cell" data-execution_count="573">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>b_df[<span class="fl">1</span>][<span class="fl">40</span><span class="op">:</span><span class="fl">50</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>b_df[<span class="fl">1</span>][<span class="fl">40</span><span class="op">:</span><span class="fl">50</span>,<span class="op">:</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="573">
 <div><div style="float: left;"><span>11×7 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -2184,7 +2190,7 @@ Vector{Any}</code></pre>
 </div>
 </div>
 <div id="74dc5c22-7113-41a5-ba42-2482303a120d" class="cell" data-execution_count="574">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>b_df[<span class="fl">1</span>][<span class="fl">85</span><span class="op">:</span><span class="fl">95</span>,<span class="op">:</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>b_df[<span class="fl">1</span>][<span class="fl">85</span><span class="op">:</span><span class="fl">95</span>,<span class="op">:</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="574">
 <div><div style="float: left;"><span>11×7 DataFrame</span></div><div style="clear: both;"></div></div><div class="data-frame" style="overflow-x: scroll;">
 <table class="data-frame caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -2338,7 +2344,7 @@ Vector{Any}</code></pre>
 <span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylabel!</span>(<span class="st">"Comparaciones"</span>)</span>
 <span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title!</span>(<span class="st">"Archivo </span><span class="sc">$</span>i<span class="st">, </span><span class="sc">$</span>(nombres[i])<span class="st">"</span>, subplot<span class="op">=</span>i)</span>
 <span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(<span class="fu">plot!</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(<span class="fu">plot!</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="1000" height="800" viewbox="0 0 4000 3200">
@@ -2609,7 +2615,7 @@ Vector{Any}</code></pre>
 <span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylabel!</span>(<span class="st">"Comparaciones"</span>)</span>
 <span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title!</span>(<span class="st">"Archivo </span><span class="sc">$</span>i<span class="st">, </span><span class="sc">$</span>(nombres[i])<span class="st">"</span>, subplot<span class="op">=</span>i)</span>
 <span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(<span class="fu">plot!</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="fu">display</span>(<span class="fu">plot!</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <!--?xml version="1.0" encoding="utf-8"?-->
 <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="1000" height="800" viewbox="0 0 4000 3200">
@@ -2869,7 +2875,7 @@ Vector{Any}</code></pre>
 </div>
 <p>Se obtienen los valores promedio de mediciones en tiempo real asi como de comparaciones por archivo con los siguientes bloques de código.</p>
 <div id="9d37ace0-92e5-4421-87e0-eba87d099d25" class="cell" data-execution_count="523">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="87c9ba08-544c-4b31-9665-8fe346fe4dcf" class="cell" data-execution_count="562">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>algoritmos <span class="op">=</span> [<span class="st">"t_heap"</span>, <span class="st">"t_merge"</span>, <span class="st">"t_qsort"</span>, <span class="st">"t_bubble"</span>, <span class="st">"t_skip"</span>]</span>
@@ -2887,7 +2893,7 @@ Vector{Any}</code></pre>
 <span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">round</span>(means[<span class="fl">4</span>], digits<span class="op">=</span><span class="fl">2</span>), <span class="st">"</span><span class="sc">\t\t</span><span class="st">"</span>,</span>
 <span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">round</span>(means[<span class="fl">5</span>], digits<span class="op">=</span><span class="fl">2</span>)</span>
 <span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Archivo     HeapSort    MergeSort   QuickSort   BubbleSort  Skiplists
 148258.71       387738.26       2.166752359e7       1.299694532e7       726287.5
@@ -2912,7 +2918,7 @@ p=512       167519.39       482052.04       2.539163326e7       1.538255138e7   
 <span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">round</span>(means[<span class="fl">4</span>], digits<span class="op">=</span><span class="fl">2</span>), <span class="st">"</span><span class="sc">\t\t</span><span class="st">"</span>,</span>
 <span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">round</span>(means[<span class="fl">5</span>], digits<span class="op">=</span><span class="fl">2</span>)</span>
 <span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Archivo     HeapSort    MergeSort   QuickSort   BubbleSort  Skiplists
 31499.31        23677.13        2.38991206e6        1.310538699e7       48754.27
@@ -3125,12 +3131,12 @@ p=512       30700.56        23677.13        117253.69       1.310538699e7       
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Copiado");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Copiado");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
